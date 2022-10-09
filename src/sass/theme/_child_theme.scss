@@ -1,0 +1,290 @@
+/*------------------------------------------------*/
+/*-------------------[LAYOUT/FONTS]----------------------*/
+/*------------------------------------------------*/
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $black;
+  font-family: $open-sans;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+//ADD ABSOLUTE FONT SIZES FOR DESKTOP
+h1 {
+  //@media only screen and (min-width: 1200px) {
+    //font-size: 36px;
+  //}
+}
+h2 {
+  //@media only screen and (min-width: 1200px) {
+    //font-size: 30px;
+  //}  
+}
+h3 {
+  //@media only screen and (min-width: 1200px) {
+    //font-size: 24px;
+  //}
+}
+
+body {
+	color: #000;
+}
+
+.fa-times-thin:before {
+  content: '\00d7';
+}
+
+.wysiwyg {
+  p:first-of-type {
+    margin-bottom: 1.5rem !important;
+  }
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+  ul {
+    li {
+      margin-bottom: 10px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/*------------------------------------------------*/
+/*--------------------[LINKS/BUTTONS]---------------------*/
+/*------------------------------------------------*/
+
+a {
+  color: $black;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.btn {
+  font-family: $open-sans;
+  text-transform: uppercase;
+  border-radius: 40px;
+  padding: .5rem 1.5rem;
+  white-space: normal;
+  &.black {
+    background-color: $black;
+    border: 0;
+    &:hover {
+      background-color: lighten($black, 10%) !important;
+      color: #fff;
+    }
+  }
+  &.white-outline {
+    background-color: transparent;
+    border: solid 3px #fff;
+    &:hover {
+      background-color: #fff !important;
+      color: $black;
+    }
+  }
+}
+
+/*------------------------------------------------*/
+/*--------------------[NAV]----------------------*/
+/*------------------------------------------------*/
+#wrapper-navbar {
+  #main-nav {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    .container {
+      @media only screen and (max-width: 399px) {
+        justify-content: center;
+      }
+      .navbar-toggler {
+        i {
+          color: $black;
+        }
+      }
+      #main-menu {
+        a {
+          font-family: $open-sans;
+          color: $black;
+          text-transform: uppercase;
+        }
+        >li {
+          &:last-of-type {
+            a {
+              background-color: $black;
+              color: #fff;
+              font-weight: 700;
+              padding: .5rem 1.5rem;
+              margin-left: 93px;
+            }
+          }
+        }
+        .dropdown-menu {
+          border-radius: 0 !important;
+          border: solid 1px $black;
+          li {
+            width: 85%;
+            margin: 0 auto;
+            text-align: center;
+            &:not(:last-of-type) {
+              border-bottom: solid 1px #dedede;
+            }
+            a {
+              padding-left: 0;
+              padding-right: 0;
+              &:hover {
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*------------------------------------------------*/
+/*--------------------[MODAL NAV]----------------------*/
+/*------------------------------------------------*/
+#modalNav {
+  .modal-dialog {
+    //set this to be whatever the breakpoint when the desktop nav takes over
+    max-width: 1199px;
+  }
+  #modalTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    #logo {
+      max-width: 262.5px;
+      margin-top: 30px;
+    }
+    .nav-modal-close {
+      margin-top: 24.5px;
+      padding: .25rem .75rem;
+     i {
+      color: $black;
+      font-weight: bold;
+     } 
+    }
+  }
+  #mobileMenu {
+    margin-top: 25px;
+    text-align: center;
+    a {
+      font-size: 1.25rem;
+      color: $black;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .dropdown-menu {
+      position: relative !important;
+      transform: none !important;
+      text-align: center;
+    }
+  }
+}
+
+/*------------------------------------------------*/
+/*--------------------[FORMS]----------------------*/
+/*------------------------------------------------*/
+.nf-form-content .list-select-wrap .nf-field-element>div, .nf-form-content input:not([type=button]), .nf-form-content textarea {
+  border-color: $black !important;
+  background: #fff !important;
+}
+.nf-error.field-wrap .nf-field-element:after {
+  background: $black !important;
+}
+.nf-form-fields-required, .ninja-forms-req-symbol, .nf-error-msg, .nf-fu-progress {
+  display: none !important;
+}
+.nf-field-container {
+  @media only screen and (max-width: 800px) {
+    margin-bottom: 20px !important;
+  }
+}
+label {
+  color: #000 !important;
+  font-weight: normal !important;
+}
+form ::placeholder, form select {
+  color: #000 !important;
+}
+.nf-form-content input.ninja-forms-field {
+  height: auto !important;
+}
+
+/*------------------------------------------------*/
+/*--------------------[REUSABLE STYLES]----------------------*/
+/*------------------------------------------------*/
+
+/*------------------------------------------------*/
+/*--------------------[HOME]----------------------*/
+/*------------------------------------------------*/
+#homepage {
+
+}
+
+/*------------------------------------------------*/
+/*--------------------[ABOUT]---------------------*/
+/*------------------------------------------------*/
+#about {
+  
+}
+
+/*------------------------------------------------*/
+/*--------------------[BLOG]---------------------*/
+/*------------------------------------------------*/
+.blog {
+  
+}
+
+/*------------------------------------------------*/
+/*--------------------[CONTACT]---------------------*/
+/*------------------------------------------------*/
+#contact {
+  
+}
+
+/*------------------------------------------------*/
+/*--------------------[SINGLE POST]---------------------*/
+/*------------------------------------------------*/
+.single {
+
+}
+
+/*------------------------------------------------*/
+/*--------------------[CPT ARCHIVE]---------------------*/
+/*------------------------------------------------*/
+
+
+/*------------------------------------------------*/
+/*--------------------[SINGLE CPT]---------------------*/
+/*------------------------------------------------*/
+
+
+/*------------------------------------------------*/
+/*--------------------[CONTACT]---------------------*/
+/*------------------------------------------------*/
+
+/*------------------------------------------------*/
+/*-------------------[FOOTER]---------------------*/
+/*------------------------------------------------*/
+
+#wrapperFooter {
+  background: $black;
+  color: #fff;
+  padding: 25px 0;
+  a {
+    color: $black;
+    text-decoration: underline;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
