@@ -7,13 +7,14 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: $black;
+  color: $green;
   font-family: $open-sans;
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
 
 body {
+  background-color: #E8E5DF;
 	color: #000;
 }
 
@@ -38,6 +39,16 @@ body {
   }
 }
 
+.green  {
+  color: $green;
+}
+.yellow {
+  color: #FFDA10;
+}
+.maroon {
+  color: #36091F;
+}
+
 /*------------------------------------------------*/
 /*--------------------[LINKS/BUTTONS]---------------------*/
 /*------------------------------------------------*/
@@ -52,13 +63,14 @@ a {
 
 .btn {
   font-family: $open-sans;
-  text-transform: uppercase;
-  border-radius: 40px;
-  padding: .5rem 1.5rem;
+  text-transform: uppercase !important;
+  padding: .5rem 1.5rem !important;
   white-space: normal;
-  color: $green;
-  border-bottom: solid 10px $yellow;
-  background-color: #fff;
+  color: $green !important;
+  border-radius: 0 !important;
+  border-width: 0 0 10px 0 !important;
+  border-color: $yellow !important;
+  background-color: #fff !important;
   &:hover {
     border-color: $maroon;
   }
@@ -68,9 +80,16 @@ a {
 /*--------------------[NAV]----------------------*/
 /*------------------------------------------------*/
 #wrapper-navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
   #main-nav {
-    padding-top: 35px;
-    padding-bottom: 35px;
+    @include media-breakpoint-down(lg) {
+      padding-top: 35px;
+      padding-bottom: 35px;  
+    }
     .container {
       @media only screen and (max-width: 399px) {
         justify-content: center;
@@ -81,10 +100,28 @@ a {
         }
       }
       #main-menu {
+        background-color: #fff;
+        border-bottom: solid 10px $yellow;
+        position: relative;
+        &:after {
+          content: '';
+          width: 100%;
+          position: absolute;
+          background: #fff;
+          left: 100%;
+          top: 0;
+          height: 57px;
+          border-bottom: solid 10px $yellow;
+        }
         a {
+          padding: 10px;
           font-family: $open-sans;
-          color: $black;
+          color: $green;
           text-transform: uppercase;
+          &:hover {
+            background-color: $maroon;
+            color: #fff;
+          }
         }
         .dropdown-menu {
           border-radius: 0 !important;
@@ -156,13 +193,16 @@ a {
 /*--------------------[FORMS]----------------------*/
 /*------------------------------------------------*/
 .nf-form-content .list-select-wrap .nf-field-element>div, .nf-form-content input:not([type=button]), .nf-form-content textarea {
-  border-color: $black !important;
+  border-color: $maroon !important;
   background: #fff !important;
 }
 .nf-error.field-wrap .nf-field-element:after {
-  background: $black !important;
+  background: $maroon !important;
 }
-.nf-form-fields-required, .ninja-forms-req-symbol, .nf-error-msg, .nf-fu-progress {
+.ninja-forms-req-symbol {
+  color: $maroon !important;
+}
+.nf-form-fields-required, .nf-error-msg, .nf-fu-progress {
   display: none !important;
 }
 .nf-field-container {
@@ -180,16 +220,89 @@ form ::placeholder, form select {
 .nf-form-content input.ninja-forms-field {
   height: auto !important;
 }
-
+.nf-form-content input[type=button] {
+  border: 0 0 10px 0 !important;
+}
 /*------------------------------------------------*/
 /*--------------------[REUSABLE STYLES]----------------------*/
 /*------------------------------------------------*/
-
+.hero {
+  padding-top: 40.57%;
+  box-shadow: rgba(72,75,10,.46) 0 0 0 100vh inset;
+  background-size: cover !important;
+  background-position: center center !important;
+  position: relative;
+  .content-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}
+hr {
+  background-color: $maroon;
+}
+.midline {
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    &:before {
+      border-top: 2px solid $maroon;
+        content:"";
+        margin: 0 auto;
+        position: absolute;
+        top: 50%; left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: -1;
+    }
+    span {
+      background: #fff; 
+        padding-right: 15px;
+    }
+}
+.gallery-wrapper {
+  display: flex;
+  .gallery-image {
+    width: 25%;
+  }
+}
 /*------------------------------------------------*/
 /*--------------------[HOME]----------------------*/
 /*------------------------------------------------*/
 #homepage {
 
+}
+
+/*------------------------------------------------*/
+/*--------------------[TRAINING PROGRAM]----------------------*/
+/*------------------------------------------------*/
+#trainingProgram {
+  #sectionOne {
+    position: relative;
+    .left {
+      .outer-wrapper {
+        top: 0;
+        left: 0;
+        position: absolute;
+        bottom: 0;
+        .content-wrapper {
+          background-color: rgba(54,9,31,.56);
+          color: #fff;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          padding-right: 50px;
+        }  
+      }
+    }
+  }
+  #sectionTwo {
+    background-color: #fff;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 
 /*------------------------------------------------*/
@@ -233,7 +346,13 @@ form ::placeholder, form select {
 /*------------------------------------------------*/
 /*--------------------[CONTACT]---------------------*/
 /*------------------------------------------------*/
-
+#contact {
+  .right {
+    img {
+      position: absolute;
+    }
+  }
+}
 /*------------------------------------------------*/
 /*-------------------[FOOTER]---------------------*/
 /*------------------------------------------------*/
@@ -242,6 +361,35 @@ form ::placeholder, form select {
   background: #1D0404;
   color: #fff;
   padding: 25px 0;
+  #footerLogo {
+    border-radius: 20px;
+  }
+  #footerMenu {
+    margin-bottom: 25px;
+    li {
+      display: flex;
+      align-items: center;
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+      &:first-of-type {
+        a {
+          padding-left: 0;
+        }
+      }
+      &:last-of-type {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+  footer {
+    hr {
+      background-color: #dedede;
+    }
+  }
   a {
     color: $black;
     text-decoration: underline;

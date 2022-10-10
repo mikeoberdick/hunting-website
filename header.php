@@ -50,7 +50,7 @@ defined( 'ABSPATH' ) || exit; ?>
 <div class="site" id="page">
 
 <!-- ******************* The Navbar Area ******************* -->
-<header id="wrapper-navbar">
+<header id="wrapper-navbar" class = "fixed-top">
 
 	<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 

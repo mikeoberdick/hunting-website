@@ -13,23 +13,40 @@ defined( 'ABSPATH' ) || exit; ?>
 <div id="js-heightControl" style="height: 0;">&nbsp;</div>
 
 <div id="wrapperFooter">
-	<div class="container-fluid">
-		<div class="row">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-3">
+				<a id = "logoLink" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
+				<?php $logo = get_field('logo', 'options'); ?>
+				<img id = "headerLogo" class = "img-fluid" src="<?php echo $logo['url']; ?>" alt="<?php echo get_bloginfo( 'name'); ?>"></a>
+			</div><!-- .col-lg-3 -->
+			<div class="col-lg-9">
+			<?php wp_nav_menu(
+				array(
+					'theme_location'  => 'footer',
+					'container_class' => '',
+					'container_id'    => 'footerMenuContainer',
+					'menu_class'      => 'd-inline-flex list-unstyled',
+					'fallback_cb'     => '',
+					'menu_id'         => 'footerMenu',
+					'depth'           => 1,
+					'after'			  => '<span> |</span>',
+					'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+				) ); ?>
+			<?php $phone = preg_replace('/[^0-9]/', '', get_field('phone_number', 'option')); ?>
+			<a class = "text-decoration-none" href="tel:<?php echo $phone ?>"><h3 class = "yellow mb-0"><?php the_field('phone_number', 'option'); ?></h3></a>
+			<p class = "small"><?php echo get_field('address_line_1', 'option') . ', ' . get_field('address_line_2', 'option'); ?></p>
+			</div><!-- .col-lg-9 -->
 			<div class="col-md-12">
-				<ul class = "list-unstyled d-flex justify-content-center mb-3">	
-					<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="social-link"><a target="_blank" href="https://www.facebook.com/pixelstrike/"><i class="fa fa-lg fa-facebook" aria-hidden="true"></i></a></li>
-
-					<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="social-link"><a target="_blank" href="https://www.instagram.com/pixelstrikecreative/"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a></li>	
-
-					<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="social-link"><a target="_blank" href="https://www.linkedin.com/company/pixelstrike-creative-llc"><i class="fa fa-lg fa-linkedin" aria-hidden="true"></i></a></li>
-				</ul>
-				<footer id="colophon" class="site-footer text-center small">
+				
+				<footer id="colophon" class="site-footer text-center">
 					<div class="container">
 						<div class="col-sm-12">
-							<p id="copyrightAndTerms">
-								&copy; <?php echo date('Y') . ' ' . get_bloginfo( 'name' ) . '. All rights reserved. ' ?><a href="/terms-and-conditions">Terms & Conditions</a>
+							<hr>
+							<p id="copyrightAndTerms" class = "small mb-0">
+								&copy; <?php echo date('Y') . ' ' . get_bloginfo( 'name' ) . '. All rights reserved. ' ?>
 							</p>
-							<p class = "mb-0">Website Designed & Developed by <a target = "_blank" href="https://pixelstrikecreative.com">Pixelstrike Creative</a></p>
+							<p class = "mb-0 small">Website Designed & Developed by <a class = "text-white" target = "_blank" href="https://designs4theweb.com">Designs 4 The Web</a></p>
 						</div><!-- .col-sm-12 -->
 					</div><!-- .container -->
 				</footer><!-- #colophon -->

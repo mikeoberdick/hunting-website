@@ -15619,13 +15619,14 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #000;
+  color: #0D2E16;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
 
 body {
+  background-color: #E8E5DF;
   color: #000;
 }
 
@@ -15646,6 +15647,18 @@ body {
   margin-bottom: 0;
 }
 
+.green {
+  color: #0D2E16;
+}
+
+.yellow {
+  color: #FFDA10;
+}
+
+.maroon {
+  color: #36091F;
+}
+
 /*------------------------------------------------*/
 /*--------------------[LINKS/BUTTONS]---------------------*/
 /*------------------------------------------------*/
@@ -15659,13 +15672,14 @@ a:hover {
 
 .btn, .wpcf7 input[type=submit], .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-info a.button {
   font-family: "Open Sans", sans-serif;
-  text-transform: uppercase;
-  border-radius: 40px;
-  padding: 0.5rem 1.5rem;
+  text-transform: uppercase !important;
+  padding: 0.5rem 1.5rem !important;
   white-space: normal;
-  color: #0D2E16;
-  border-bottom: solid 10px #FFDA10;
-  background-color: #fff;
+  color: #0D2E16 !important;
+  border-radius: 0 !important;
+  border-width: 0 0 10px 0 !important;
+  border-color: #FFDA10 !important;
+  background-color: #fff !important;
 }
 .btn:hover, .wpcf7 input[type=submit]:hover, .woocommerce-notices-wrapper .woocommerce-message a.button:hover, .woocommerce-info a.button:hover {
   border-color: #36091F;
@@ -15674,9 +15688,18 @@ a:hover {
 /*------------------------------------------------*/
 /*--------------------[NAV]----------------------*/
 /*------------------------------------------------*/
-#wrapper-navbar #main-nav {
-  padding-top: 35px;
-  padding-bottom: 35px;
+#wrapper-navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+@media (max-width: 991.98px) {
+  #wrapper-navbar #main-nav {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
 }
 @media only screen and (max-width: 399px) {
   #wrapper-navbar #main-nav .container {
@@ -15686,10 +15709,30 @@ a:hover {
 #wrapper-navbar #main-nav .container .navbar-toggler i {
   color: #000;
 }
+#wrapper-navbar #main-nav .container #main-menu {
+  background-color: #fff;
+  border-bottom: solid 10px #FFDA10;
+  position: relative;
+}
+#wrapper-navbar #main-nav .container #main-menu:after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  background: #fff;
+  left: 100%;
+  top: 0;
+  height: 57px;
+  border-bottom: solid 10px #FFDA10;
+}
 #wrapper-navbar #main-nav .container #main-menu a {
+  padding: 10px;
   font-family: "Open Sans", sans-serif;
-  color: #000;
+  color: #0D2E16;
   text-transform: uppercase;
+}
+#wrapper-navbar #main-nav .container #main-menu a:hover {
+  background-color: #36091F;
+  color: #fff;
 }
 #wrapper-navbar #main-nav .container #main-menu .dropdown-menu {
   border-radius: 0 !important;
@@ -15754,15 +15797,19 @@ a:hover {
 /*--------------------[FORMS]----------------------*/
 /*------------------------------------------------*/
 .nf-form-content .list-select-wrap .nf-field-element > div, .nf-form-content input:not([type=button]), .nf-form-content textarea {
-  border-color: #000 !important;
+  border-color: #36091F !important;
   background: #fff !important;
 }
 
 .nf-error.field-wrap .nf-field-element:after {
-  background: #000 !important;
+  background: #36091F !important;
 }
 
-.nf-form-fields-required, .ninja-forms-req-symbol, .nf-error-msg, .nf-fu-progress {
+.ninja-forms-req-symbol {
+  color: #36091F !important;
+}
+
+.nf-form-fields-required, .nf-error-msg, .nf-fu-progress {
   display: none !important;
 }
 
@@ -15793,12 +15840,89 @@ form ::placeholder, form select {
   height: auto !important;
 }
 
+.nf-form-content input[type=button] {
+  border: 0 0 10px 0 !important;
+}
+
 /*------------------------------------------------*/
 /*--------------------[REUSABLE STYLES]----------------------*/
 /*------------------------------------------------*/
+.hero {
+  padding-top: 40.57%;
+  box-shadow: rgba(72, 75, 10, 0.46) 0 0 0 100vh inset;
+  background-size: cover !important;
+  background-position: center center !important;
+  position: relative;
+}
+.hero .content-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+hr {
+  background-color: #36091F;
+}
+
+.midline {
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+}
+.midline:before {
+  border-top: 2px solid #36091F;
+  content: "";
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+.midline span {
+  background: #fff;
+  padding-right: 15px;
+}
+
+.gallery-wrapper {
+  display: flex;
+}
+.gallery-wrapper .gallery-image {
+  width: 25%;
+}
+
 /*------------------------------------------------*/
 /*--------------------[HOME]----------------------*/
 /*------------------------------------------------*/
+/*------------------------------------------------*/
+/*--------------------[TRAINING PROGRAM]----------------------*/
+/*------------------------------------------------*/
+#trainingProgram #sectionOne {
+  position: relative;
+}
+#trainingProgram #sectionOne .left .outer-wrapper {
+  top: 0;
+  left: 0;
+  position: absolute;
+  bottom: 0;
+}
+#trainingProgram #sectionOne .left .outer-wrapper .content-wrapper {
+  background-color: rgba(54, 9, 31, 0.56);
+  color: #fff;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 50px;
+}
+#trainingProgram #sectionTwo {
+  background-color: #fff;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 /*------------------------------------------------*/
 /*--------------------[ABOUT]---------------------*/
 /*------------------------------------------------*/
@@ -15820,6 +15944,10 @@ form ::placeholder, form select {
 /*------------------------------------------------*/
 /*--------------------[CONTACT]---------------------*/
 /*------------------------------------------------*/
+#contact .right img {
+  position: absolute;
+}
+
 /*------------------------------------------------*/
 /*-------------------[FOOTER]---------------------*/
 /*------------------------------------------------*/
@@ -15827,6 +15955,29 @@ form ::placeholder, form select {
   background: #1D0404;
   color: #fff;
   padding: 25px 0;
+}
+#wrapperFooter #footerLogo {
+  border-radius: 20px;
+}
+#wrapperFooter #footerMenu {
+  margin-bottom: 25px;
+}
+#wrapperFooter #footerMenu li {
+  display: flex;
+  align-items: center;
+}
+#wrapperFooter #footerMenu li a {
+  text-decoration: none;
+  color: #fff;
+}
+#wrapperFooter #footerMenu li:first-of-type a {
+  padding-left: 0;
+}
+#wrapperFooter #footerMenu li:last-of-type span {
+  display: none;
+}
+#wrapperFooter footer hr {
+  background-color: #dedede;
 }
 #wrapperFooter a {
   color: #000;

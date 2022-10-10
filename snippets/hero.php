@@ -1,15 +1,12 @@
-<?php $hero = get_field('hero'); ?>
-<section class = "hero" style = "background: url('<?php echo $bg; ?>'); ">
+<?php $hero = get_field('hero'); $bg = $hero['background_image']; ?>
+<section class = "hero" style = "background: url('<?php echo $bg['url']; ?>'); ">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<div class="content-container">
-					<h1 class = "title">
-						<?php if ( is_singular('case-study') ) {
-						echo 'International Solutions'; } else {
-							echo $hero['header'];
-						} ?></h1>
-					<?php if( $hero['button_text'] && $hero['button_link'] ): ?>
+				<div class="content-wrapper offset-left offset-right">
+					<h3 class = "mb-2 yellow"><?php echo $hero['subtitle']; ?></h3>
+					<h1 class = "title text-white"><?php echo $hero['title']; ?> </h1>
+					<?php if( $hero['button'] == 'yes' ): ?>
 						<a href = "<?php echo $hero['button_link']; ?>"><button role = "button" class = "btn"><?php echo $hero["button_text"]; ?></button></a>
 					<?php endif; ?>		
 				</div><!-- .content-container -->

@@ -8,7 +8,7 @@ defined( 'ABSPATH' ) || exit;
 <div id="content" class = "page-wrapper" tabindex="-1">
 	<main id="main" class="site-main">
 		<div id="guidedHunts">
-			<?php get_template_part( 'snippets/page-title'); ?>
+			<?php get_template_part( 'snippets/hero'); ?>
 			
 		</div><!-- #guidedHunts -->
 	</main><!-- #main -->

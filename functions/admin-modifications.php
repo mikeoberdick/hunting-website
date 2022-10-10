@@ -90,4 +90,14 @@ if( function_exists('acf_add_options_page') ) {
 remove_filter ('the_content', 'wpautop');
 remove_filter ('the_excerpt', 'wpautop');
 
+//add the footer menu
+function d4tw_menus() {
+    register_nav_menus(
+        array(
+         'footer' => __( 'Footer' ),
+         )
+    );
+}
+add_action( 'init', 'd4tw_menus' );
+
 ?>
