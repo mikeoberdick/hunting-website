@@ -13,23 +13,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 1.5rem;
 }
 
-//ADD ABSOLUTE FONT SIZES FOR DESKTOP
-h1 {
-  //@media only screen and (min-width: 1200px) {
-    //font-size: 36px;
-  //}
-}
-h2 {
-  //@media only screen and (min-width: 1200px) {
-    //font-size: 30px;
-  //}  
-}
-h3 {
-  //@media only screen and (min-width: 1200px) {
-    //font-size: 24px;
-  //}
-}
-
 body {
 	color: #000;
 }
@@ -73,21 +56,11 @@ a {
   border-radius: 40px;
   padding: .5rem 1.5rem;
   white-space: normal;
-  &.black {
-    background-color: $black;
-    border: 0;
-    &:hover {
-      background-color: lighten($black, 10%) !important;
-      color: #fff;
-    }
-  }
-  &.white-outline {
-    background-color: transparent;
-    border: solid 3px #fff;
-    &:hover {
-      background-color: #fff !important;
-      color: $black;
-    }
+  color: $green;
+  border-bottom: solid 10px $yellow;
+  background-color: #fff;
+  &:hover {
+    border-color: $maroon;
   }
 }
 
@@ -112,17 +85,6 @@ a {
           font-family: $open-sans;
           color: $black;
           text-transform: uppercase;
-        }
-        >li {
-          &:last-of-type {
-            a {
-              background-color: $black;
-              color: #fff;
-              font-weight: 700;
-              padding: .5rem 1.5rem;
-              margin-left: 93px;
-            }
-          }
         }
         .dropdown-menu {
           border-radius: 0 !important;
@@ -277,7 +239,7 @@ form ::placeholder, form select {
 /*------------------------------------------------*/
 
 #wrapperFooter {
-  background: $black;
+  background: #1D0404;
   color: #fff;
   padding: 25px 0;
   a {

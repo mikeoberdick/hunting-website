@@ -1,16 +1,5 @@
-<?php
-if (is_home() || is_category() || is_singular('post')) {
-	$hero = get_field('hero', '172');
-} else {
-	$hero = get_field('hero');
-}
-if ($hero['background_image']) {
-	$img = $hero['background_image'];
-	$bg = $img['url'];
-} else {
-	$bg = get_stylesheet_directory_uri() . '/img/default_hero_bg.png';
-} ?>
-<section class = "hero mb-4<?php if ( is_page_template( array ('templates/classroom-solutions.php', 'templates/clinical-solutions.php', 'templates/international-solutions.php') ) ) { echo ' lg-hero'; } ?>" style = "background: url('<?php echo $bg; ?>'); ">
+<?php $hero = get_field('hero'); ?>
+<section class = "hero" style = "background: url('<?php echo $bg; ?>'); ">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -20,8 +9,8 @@ if ($hero['background_image']) {
 						echo 'International Solutions'; } else {
 							echo $hero['header'];
 						} ?></h1>
-					<?php if( $hero['copy'] ): ?>
-						<p><?php echo $hero['copy']; ?></p>
+					<?php if( $hero['button_text'] && $hero['button_link'] ): ?>
+						<a href = "<?php echo $hero['button_link']; ?>"><button role = "button" class = "btn"><?php echo $hero["button_text"]; ?></button></a>
 					<?php endif; ?>		
 				</div><!-- .content-container -->
 			</div><!-- .col-sm-12 -->

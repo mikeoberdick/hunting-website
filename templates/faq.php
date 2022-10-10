@@ -1,4 +1,4 @@
-<?php /* Template Name: Our Team */ 
+<?php /* Template Name: FAQ */ 
 
 //Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
@@ -7,10 +7,10 @@ defined( 'ABSPATH' ) || exit;
 
 <div id="content" class = "page-wrapper" tabindex="-1">
 	<main id="main" class="site-main">
-		<div id="ourTeam">
+		<div id="faq">
 			<?php get_template_part( 'snippets/page-title'); ?>
 			
-		</div><!-- #ourTeam -->
+		</div><!-- #faq -->
 	</main><!-- #main -->
 </div><!-- #content -->
 
