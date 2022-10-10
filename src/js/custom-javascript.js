@@ -26,7 +26,7 @@ if ($(window).width() >= 992) {
 }
 
 //Entire div clickable
-$('.product-link').on('click', function(e){
+$('.page-bucket').on('click', function(e){
   e.preventDefault();
   window.location.href=$(this).data('link');
 });
@@ -50,9 +50,21 @@ if ( $(window).width() >= 992 ) {
 
   	//Force the image to be the width of column plus the gutter
   	if ($('#trainingProgram')[0]) {
-  		var imageWidth = $('#sectionOne .left').outerWidth();
-	    $('#sectionOne .left .outer-wrapper').css('width', (Math.ceil(offset.left) - 15 + imageWidth ) + 'px');
+  		var imageOneWidth = $('#sectionOne .left').outerWidth();
+	    $('#sectionOne .left .outer-wrapper').css('width', (Math.ceil(offset.left) - 15 + imageOneWidth ) + 'px');
 	  }
+    if ($('#about')[0]) {
+      var imageTwoWidth = $('#sectionOne .right').outerWidth();
+      $('#sectionOne .right img').css('width', (Math.ceil(offset.left) - 15 + imageTwoWidth ) + 'px');
+    }
+    if ($('#homepage')[0]) {
+      var imageThreeWidth = $('#sectionThree .col-lg-6').outerWidth();
+      $('#sectionThree .left .image-holder').css('width', (Math.ceil(offset.left) - 15 + imageThreeWidth ) + 'px');
+    }
+    if ($('#faq')[0]) {
+      var imageFourWidth = $('#sectionOne .right').outerWidth();
+      $('#sectionThree .right img').css('width', (Math.ceil(offset.left) - 15 + imageFourWidth ) + 'px');
+    }
 
 }
 

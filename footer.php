@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit; ?>
 			<div class="col-lg-3">
 				<a id = "logoLink" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
 				<?php $logo = get_field('logo', 'options'); ?>
-				<img id = "headerLogo" class = "img-fluid" src="<?php echo $logo['url']; ?>" alt="<?php echo get_bloginfo( 'name'); ?>"></a>
+				<img id = "footerLogo" class = "img-fluid" src="<?php echo $logo['url']; ?>" alt="<?php echo get_bloginfo( 'name'); ?>"></a>
 			</div><!-- .col-lg-3 -->
 			<div class="col-lg-9">
 			<?php wp_nav_menu(

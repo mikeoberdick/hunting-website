@@ -15634,10 +15634,13 @@ body {
   content: "×";
 }
 
-.wysiwyg p:first-of-type {
-  margin-bottom: 1.5rem !important;
+.wysiwyg p {
+  margin-bottom: 1.5rem;
 }
 .wysiwyg p:last-of-type {
+  margin-bottom: 0;
+}
+.wysiwyg p:only-of-type {
   margin-bottom: 0;
 }
 .wysiwyg ul li {
@@ -15682,7 +15685,8 @@ a:hover {
   background-color: #fff !important;
 }
 .btn:hover, .wpcf7 input[type=submit]:hover, .woocommerce-notices-wrapper .woocommerce-message a.button:hover, .woocommerce-info a.button:hover {
-  border-color: #36091F;
+  background-color: #36091F !important;
+  color: #fff !important;
 }
 
 /*------------------------------------------------*/
@@ -15894,9 +15898,41 @@ hr {
   width: 25%;
 }
 
+.page-bucket {
+  cursor: pointer;
+  height: 350px;
+  box-shadow: rgba(43, 21, 21, 0.45) 0 0 0 350px inset;
+  background-size: cover !important;
+}
+
 /*------------------------------------------------*/
 /*--------------------[HOME]----------------------*/
 /*------------------------------------------------*/
+#homepage #sectionOne {
+  display: flex;
+}
+#homepage #sectionOne .page-bucket {
+  width: 33.33%;
+}
+#homepage #sectionTwo {
+  background-color: #fff;
+}
+#homepage #sectionThree {
+  background-color: #36091F;
+  padding-top: 115px;
+  padding-bottom: 115px;
+  position: relative;
+}
+#homepage #sectionThree .left .image-holder {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-position: center center !important;
+  background-size: cover;
+  box-shadow: rgba(43, 21, 21, 0.45) 0 0 0 100vh inset;
+}
+
 /*------------------------------------------------*/
 /*--------------------[TRAINING PROGRAM]----------------------*/
 /*------------------------------------------------*/
@@ -15924,28 +15960,154 @@ hr {
 }
 
 /*------------------------------------------------*/
+/*--------------------[GUIDED HUNTS]----------------------*/
+/*------------------------------------------------*/
+#guidedHunts #sectionOne {
+  background-color: #0F461E;
+  margin-bottom: -125px;
+}
+#guidedHunts #sectionTwo {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 100px;
+  background-color: #E8E5DF;
+  padding-bottom: 100px;
+}
+#guidedHunts #sectionTwo .page-bucket {
+  width: 50%;
+}
+
+/*------------------------------------------------*/
+/*--------------------[TAXIDERMY]----------------------*/
+/*------------------------------------------------*/
+#taxidermy #sectionOne {
+  background-color: #36091F;
+}
+#taxidermy #sectionTwo {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #E8E5DF;
+  margin-bottom: -60px;
+}
+#taxidermy #sectionTwo .right img {
+  margin-top: -135px;
+}
+#taxidermy #sectionThree {
+  background-color: #fff;
+}
+
+/*------------------------------------------------*/
 /*--------------------[ABOUT]---------------------*/
 /*------------------------------------------------*/
-/*------------------------------------------------*/
-/*--------------------[BLOG]---------------------*/
-/*------------------------------------------------*/
-/*------------------------------------------------*/
-/*--------------------[CONTACT]---------------------*/
-/*------------------------------------------------*/
-/*------------------------------------------------*/
-/*--------------------[SINGLE POST]---------------------*/
-/*------------------------------------------------*/
-/*------------------------------------------------*/
-/*--------------------[CPT ARCHIVE]---------------------*/
-/*------------------------------------------------*/
-/*------------------------------------------------*/
-/*--------------------[SINGLE CPT]---------------------*/
-/*------------------------------------------------*/
-/*------------------------------------------------*/
-/*--------------------[CONTACT]---------------------*/
-/*------------------------------------------------*/
-#contact .right img {
+#about #sectionOne {
+  background-color: #36091F;
+  position: relative;
+}
+#about #sectionOne .right img {
   position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+#about #sectionTwo {
+  box-shadow: rgba(15, 70, 30, 0.95) 0 0 0 100vh inset;
+}
+#about #sectionTwo .right .inner-wrapper {
+  border-left: solid 2px #E8E5DF;
+  padding-left: 25px;
+}
+#about #sectionThree {
+  margin-top: -50px;
+  margin-bottom: -50px;
+}
+#about #sectionThree .center .inner-wrapper {
+  background-color: #36091F;
+  padding: 100px;
+  border: solid 10px #fff;
+}
+#about #sectionFour {
+  background-color: #fff;
+}
+#about #sectionFour .quote-container {
+  background-color: #E8E5DF;
+}
+
+/*------------------------------------------------*/
+/*--------------------[FAQ]---------------------*/
+/*------------------------------------------------*/
+#faq #sectionOne {
+  position: relative;
+}
+#faq #sectionOne .right img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+#faq #sectionTwo {
+  background-color: #fff;
+}
+#faq #sectionTwo #faqAccordion .question-container {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: solid 3px #E8E5DF;
+}
+#faq #sectionTwo #faqAccordion .question-container .question {
+  display: flex;
+  align-items: center;
+}
+#faq #sectionTwo #faqAccordion .question-container .question .plus-to-minus {
+  width: 50px;
+  height: 50px;
+  font-size: 1.5em;
+  position: relative;
+}
+#faq #sectionTwo #faqAccordion .question-container .question .plus-to-minus span {
+  position: absolute;
+  transition: 300ms;
+  background: #36091F;
+  border-radius: 2px;
+  cursor: pointer;
+}
+#faq #sectionTwo #faqAccordion .question-container .question .plus-to-minus span:first-child {
+  top: 25%;
+  bottom: 25%;
+  width: 10%;
+  left: 45%;
+}
+#faq #sectionTwo #faqAccordion .question-container .question .plus-to-minus span:last-child {
+  left: 25%;
+  right: 25%;
+  height: 10%;
+  top: 45%;
+}
+#faq #sectionTwo #faqAccordion .question-container .card-body {
+  padding-left: 50px;
+  padding-bottom: 0;
+}
+#faq #sectionTwo #faqAccordion .question-container .card-body p {
+  margin-bottom: 0;
+  color: #000;
+}
+#faq #sectionTwo #faqAccordion .question-container a[aria-expanded=true] .plus-to-minus span {
+  transform: rotate(90deg);
+}
+#faq #sectionTwo #faqAccordion .question-container a[aria-expanded=true] .plus-to-minus span:last-child {
+  left: 50%;
+  right: 50%;
+}
+
+/*------------------------------------------------*/
+/*--------------------[CONTACT]---------------------*/
+/*------------------------------------------------*/
+#contact #sectionOne {
+  position: relative;
+}
+#contact #sectionOne .right img {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
 }
 
 /*------------------------------------------------*/

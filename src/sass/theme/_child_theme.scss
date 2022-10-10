@@ -23,11 +23,14 @@ body {
 }
 
 .wysiwyg {
-  p:first-of-type {
-    margin-bottom: 1.5rem !important;
-  }
-  p:last-of-type {
-    margin-bottom: 0;
+  p {
+    margin-bottom: 1.5rem;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    &:only-of-type {
+      margin-bottom: 0;
+    }
   }
   ul {
     li {
@@ -72,7 +75,8 @@ a {
   border-color: $yellow !important;
   background-color: #fff !important;
   &:hover {
-    border-color: $maroon;
+    background-color: $maroon !important;
+    color: #fff !important;
   }
 }
 
@@ -268,11 +272,42 @@ hr {
     width: 25%;
   }
 }
+.page-bucket {
+  cursor: pointer;
+  height: 350px;
+  box-shadow: rgba(43,21,21,.45) 0 0 0 350px inset;
+  background-size: cover !important;
+}
 /*------------------------------------------------*/
 /*--------------------[HOME]----------------------*/
 /*------------------------------------------------*/
 #homepage {
-
+  #sectionOne {
+    display: flex;
+    .page-bucket {
+      width: 33.33%;
+    }
+  }
+  #sectionTwo {
+    background-color: #fff;
+  }
+  #sectionThree {
+    background-color: $maroon;
+    padding-top: 115px;
+    padding-bottom: 115px;
+    position: relative;
+    .left {
+      .image-holder {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        background-position: center center !important;
+        background-size: cover;
+        box-shadow: rgba(43,21,21,.45) 0 0 0 100vh inset;
+      }
+    }
+  }
 }
 
 /*------------------------------------------------*/
@@ -306,50 +341,180 @@ hr {
 }
 
 /*------------------------------------------------*/
+/*--------------------[GUIDED HUNTS]----------------------*/
+/*------------------------------------------------*/
+#guidedHunts {
+  #sectionOne {
+    background-color: #0F461E;
+    margin-bottom: -125px;
+  }
+  #sectionTwo {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    background-color: #E8E5DF;
+    padding-bottom: 100px;
+    .page-bucket {
+      width: 50%;
+    }
+  }
+}
+
+/*------------------------------------------------*/
+/*--------------------[TAXIDERMY]----------------------*/
+/*------------------------------------------------*/
+#taxidermy {
+  #sectionOne {
+    background-color: $maroon;
+  }
+  #sectionTwo {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #E8E5DF;
+    margin-bottom: -60px;
+    .right {
+      img {
+        margin-top: -135px;
+      }
+    }
+  }
+  #sectionThree {
+    background-color: #fff;
+  }
+}
+
+/*------------------------------------------------*/
 /*--------------------[ABOUT]---------------------*/
 /*------------------------------------------------*/
 #about {
-  
+  #sectionOne {
+    background-color: $maroon;
+    position: relative;
+    .right {
+      img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+      }
+    }
+  }
+  #sectionTwo {
+    box-shadow: rgba(15,70,30,.95) 0 0 0 100vh inset;
+    .right {
+      .inner-wrapper {
+        border-left: solid 2px #E8E5DF;
+        padding-left: 25px;
+      }
+    }
+  }
+  #sectionThree {
+    margin-top: -50px;
+    margin-bottom: -50px;
+    .center {
+      .inner-wrapper {
+        background-color: $maroon;
+        padding: 100px;
+        border: solid 10px #fff;
+      }
+    }
+  }
+  #sectionFour {
+    background-color: #fff;
+    .quote-container {
+      background-color: #E8E5DF;
+    }
+  }
 }
 
 /*------------------------------------------------*/
-/*--------------------[BLOG]---------------------*/
+/*--------------------[FAQ]---------------------*/
 /*------------------------------------------------*/
-.blog {
-  
+#faq {
+  #sectionOne {
+    position: relative;
+    .right {
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+      }
+    }
+  }
+  #sectionTwo {
+    background-color: #fff;
+    #faqAccordion {
+    .question-container {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      border-bottom: solid 3px #E8E5DF;
+      .question {
+        display: flex;
+        align-items: center;
+        .plus-to-minus {
+          width: 50px;
+          height: 50px;
+          font-size: 1.5em;
+          position: relative;
+          span {
+            position: absolute;
+            transition: 300ms;
+            background: $maroon;
+            border-radius: 2px;
+            cursor: pointer;
+            &:first-child {
+              top: 25%;
+              bottom: 25%;
+              width: 10%;
+              left: 45%;  
+            }
+            &:last-child {
+              left: 25%;
+              right: 25%;
+              height: 10%;
+              top: 45%;  
+            }
+          }
+        }
+      }
+      .card-body {
+        padding-left: 50px;
+        padding-bottom: 0;
+        p {
+          margin-bottom: 0;
+          color: #000;
+        }
+      }
+      a[aria-expanded="true"] {
+        .plus-to-minus {
+          span {
+            transform: rotate(90deg);
+            &:last-child {
+              left: 50%;
+              right: 50%; 
+            }  
+          }
+        }
+      }
+    }
+    }
+  }
 }
 
 /*------------------------------------------------*/
 /*--------------------[CONTACT]---------------------*/
 /*------------------------------------------------*/
 #contact {
-  
-}
-
-/*------------------------------------------------*/
-/*--------------------[SINGLE POST]---------------------*/
-/*------------------------------------------------*/
-.single {
-
-}
-
-/*------------------------------------------------*/
-/*--------------------[CPT ARCHIVE]---------------------*/
-/*------------------------------------------------*/
-
-
-/*------------------------------------------------*/
-/*--------------------[SINGLE CPT]---------------------*/
-/*------------------------------------------------*/
-
-
-/*------------------------------------------------*/
-/*--------------------[CONTACT]---------------------*/
-/*------------------------------------------------*/
-#contact {
-  .right {
-    img {
-      position: absolute;
+  #sectionOne {
+    position: relative;
+    .right {
+      img {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+      }
     }
   }
 }
