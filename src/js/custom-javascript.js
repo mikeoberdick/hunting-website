@@ -18,13 +18,6 @@ $(".scroll-down").on('click', function(event) {
     return false;
 });
 
-//Dropdown hover on desktop
-if ($(window).width() >= 992) {
-    $('#main-menu > li.dropdown').hover(function() {
-		$(this).find('.dropdown-menu').first().toggleClass('show');
-	});
-}
-
 //Entire div clickable
 $('.page-bucket').on('click', function(e){
   e.preventDefault();
@@ -39,31 +32,30 @@ $('.dropdown-menu a').on('click', function() {
 if ( $(window).width() >= 992 ) {
     
     //Set the padding within edge to edge design to simulate an inner container
-    var offset = $('#page .container').offset();
+    var offset = $('#content .container').offset();
     $('.offset-left').css('padding-left', ( Math.ceil(offset.left) + 15 ) + 'px');
     $('.offset-right').css('padding-right', ( Math.ceil(offset.left) + 15 ) + 'px');
 
-    //Get the height of the image within an absolutely positioned div to force the height of the section
-  	var imageOneHeight = $('#otherSpecialties #sectionTwo .image-wrapper img').height();
-  	$('#otherSpecialties #sectionTwo').css('height', Math.ceil(imageOneHeight) + 'px');
-  	$('#otherSpecialties #sectionTwo .image-wrapper').css('position', 'absolute')
-
   	//Force the image to be the width of column plus the gutter
   	if ($('#trainingProgram')[0]) {
-  		var imageOneWidth = $('#sectionOne .left').outerWidth();
-	    $('#sectionOne .left .outer-wrapper').css('width', (Math.ceil(offset.left) - 15 + imageOneWidth ) + 'px');
+  		var widthOne = $('#sectionOne .left').outerWidth();
+	    $('#sectionOne .left .outer-wrapper').css('width', (Math.ceil(offset.left) - 15 + widthOne ) + 'px');
 	  }
     if ($('#about')[0]) {
-      var imageTwoWidth = $('#sectionOne .right').outerWidth();
-      $('#sectionOne .right img').css('width', (Math.ceil(offset.left) - 15 + imageTwoWidth ) + 'px');
+      var widthTwo = $('#sectionOne .right').outerWidth();
+      $('#sectionOne .right img').css('width', (Math.ceil(offset.left) - 15 + widthTwo ) + 'px');
     }
     if ($('#homepage')[0]) {
-      var imageThreeWidth = $('#sectionThree .col-lg-6').outerWidth();
-      $('#sectionThree .left .image-holder').css('width', (Math.ceil(offset.left) - 15 + imageThreeWidth ) + 'px');
+      var widthThree = $('#sectionThree .col-lg-6').outerWidth();
+      $('#sectionThree .left .image-holder').css('width', (Math.ceil(offset.left) - 15 + widthThree ) + 'px');
     }
     if ($('#faq')[0]) {
-      var imageFourWidth = $('#sectionOne .right').outerWidth();
-      $('#sectionThree .right img').css('width', (Math.ceil(offset.left) - 15 + imageFourWidth ) + 'px');
+      var widthFour = $('#sectionOne .right').outerWidth();
+      $('#sectionThree .right img').css('width', (Math.ceil(offset.left) - 15 + widthFour ) + 'px');
+    }
+    if ($('#singleGuidedHunt')[0]) {
+      var widthFive = $('#sectionOne .left').outerWidth();
+      $('#sectionOne .left .inner-wrapper').css('width', (Math.ceil(offset.left) - 15 + widthFive ) + 'px');
     }
 
 }

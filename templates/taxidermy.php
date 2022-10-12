@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
-							<div class="wysiwyg text-white text-center w-50 mx-auto">
+							<div class="wysiwyg text-white text-center w-50 mx-auto oswald">
 								<?php echo $sectionOne['quote']; ?>
 							</div><!-- .wysiwyg -->
 						</div><!-- .col-sm-12 -->
@@ -28,7 +28,7 @@ defined( 'ABSPATH' ) || exit;
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-6">
-							<h3><?php echo $sectionTwo['header']; ?></h3>
+							<h3 class = "oswald"><?php echo $sectionTwo['header']; ?></h3>
 							<div class="wysiwyg">
 								<?php echo $sectionTwo['content']; ?>
 							</div><!-- .wysiwyg -->
@@ -51,7 +51,9 @@ defined( 'ABSPATH' ) || exit;
 						<?php while(have_rows('section_three')) : the_row(); ?>
 							<?php while(have_rows('rates')) : the_row(); ?>
 								<div class="col-lg-4">
-									<h5><?php the_sub_field('title'); ?></h5>
+									<?php $img = $sectionThree['image']; ?>
+									<img class ="mb-3" src = "<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
+									<h5 class = "maroon oswald"><?php the_sub_field('title'); ?></h5>
 									<div class="wysiwyg">
 										<?php the_sub_field('content'); ?>
 									</div><!-- .wysiwyg -->

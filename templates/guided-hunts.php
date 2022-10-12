@@ -16,8 +16,8 @@ defined( 'ABSPATH' ) || exit;
 					<div class="row align-items-center">
 						<div class="col-lg-7">
 							<h5 class = "yellow"><?php echo $sectionOne['subheader']; ?></h5>
-							<h3 class = "text-white"><?php echo $sectionOne['header']; ?></h3>
-							<div class="wysiwyg text-white">
+							<h3 class = "text-white oswald"><?php echo $sectionOne['header']; ?></h3>
+							<div class="wysiwyg text-white pb-5">
 								<?php echo $sectionOne['content']; ?>
 							</div><!-- .wysiwyg -->
 						</div><!-- .col-lg-7 -->
@@ -39,15 +39,15 @@ defined( 'ABSPATH' ) || exit;
 			while( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
 				<?php $bg = get_field('featured_image'); ?>
             	<div class="page-bucket d-flex flex-column justify-content-center align-items-center" data-link = "<?php the_permalink(); ?>" style = "background-image: url('<?php echo $bg['url']; ?>'); ">
-					<h5 class = "yellow">Learn More</h5>
-					<h3 class = "text-white"><?php the_title(); ?></h3>
+					<h5 class = "yellow sofia">Book Your Hunt</h5>
+					<h2 class = "text-white oswald"><?php the_title(); ?></h2>
 				</div><!-- .page-bucket -->
-    		<?php endwhile; ?>
+    		<?php endwhile; wp_reset_query(); ?>
 			
 			</section><!-- #sectionTwo -->
 
 			<section id="sectionThree">
-				<?php get_template_part( 'snippets/gallery'); ?>
+				<?php get_template_part('snippets/gallery'); ?>
 			</section><!-- #sectionThree -->
 
 		</div><!-- #guidedHunts -->

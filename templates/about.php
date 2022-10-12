@@ -15,8 +15,8 @@ defined( 'ABSPATH' ) || exit;
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-8 left py-5">
-							<h5 class = "yellow"><?php echo $sectionOne['subheader']; ?></h5>
-							<h3 class = "mb-3 text-white"><?php echo $sectionOne['header']; ?></h3>
+							<h5 class = "yellow sofia"><?php echo $sectionOne['subheader']; ?></h5>
+							<h3 class = "mb-3 text-white oswald"><?php echo $sectionOne['header']; ?></h3>
 							<div class="wysiwyg text-white">
 								<?php echo $sectionOne['content']; ?>
 							</div><!-- .wysiwyg -->
@@ -34,13 +34,13 @@ defined( 'ABSPATH' ) || exit;
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-4 left">
-							<div class="wysiwyg yellow text-right">
+							<div class="wysiwyg yellow text-right oswald">
 								<?php echo $sectionTwo['quote']; ?>
 							</div><!-- .wysiwyg -->
 						</div><!-- .col-lg-4 -->
 						<div class="col-lg-8 right">
 							<div class="inner-wrapper">
-								<h5 class = "yellow"><?php echo $sectionTwo['subheader']; ?></h5>
+								<h5 class = "yellow sofia"><?php echo $sectionTwo['subheader']; ?></h5>
 								<h3 class = "mb-3 text-white"><?php echo $sectionTwo['header']; ?></h3>
 								<div class="wysiwyg text-white">
 									<?php echo $sectionTwo['content']; ?>
@@ -56,21 +56,21 @@ defined( 'ABSPATH' ) || exit;
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-3">
-							<div class="wysiwyg green py-5">
+							<div class="wysiwyg green py-5 oswald">
 								<?php echo $sectionThree['quote_one']; ?>
 							</div><!-- .wysiwyg -->
 						</div><!-- .col-lg-3 -->
 						<div class="col-lg-6 center">
 							<div class="inner-wrapper">
-								<h5 class = "yellow"><?php echo $sectionThree['subheader']; ?></h5>
-								<h3 class = "mb-3 text-white"><?php echo $sectionThree['header']; ?></h3>
+								<h5 class = "yellow sofia"><?php echo $sectionThree['subheader']; ?></h5>
+								<h3 class = "mb-3 text-white oswald"><?php echo $sectionThree['header']; ?></h3>
 								<div class="wysiwyg text-white">
 									<?php echo $sectionThree['content']; ?>
 								</div><!-- .wysiwyg -->	
 							</div><!-- .inner-wrapper -->
 						</div><!-- .col-lg-6 -->
 						<div class="col-lg-3">
-							<div class="wysiwyg green py-5">
+							<div class="wysiwyg green py-5 oswald">
 								<?php echo $sectionThree['quote_two']; ?>
 							</div><!-- .wysiwyg -->
 						</div><!-- .col-lg-3 -->
@@ -95,19 +95,14 @@ defined( 'ABSPATH' ) || exit;
 							<img src = "<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
 						</div><!-- .col-lg-4 -->
 						<div class="col-sm-12">
-							<div class="text-center my-4 fw-bold">
+							<h3 class = "pt-3 text-center sofia">Licenses & Certifications</h3>
+							<hr>
+							<div class="text-center my-4 oswald">
 								<?php echo $sectionFour['licenses']; ?>
 							</div><!-- .text-center -->
 						</div><!-- .col-sm-12 -->
 					</div><!-- .row -->
 				</div><!-- .container -->
-				<div class="quote-container py-5">
-					<div class="quote">
-						<div class="wysiwyg green w-50 mx-auto green text-center">
-							<?php echo $sectionFour['lower_quote']; ?>
-						</div><!-- .wysiwyg -->
-					</div><!-- .quote -->
-				</div><!-- .quote-container -->
 			</section><!-- #sectionFour -->
 			
 		</div><!-- #about -->

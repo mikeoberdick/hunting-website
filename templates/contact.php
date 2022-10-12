@@ -15,21 +15,21 @@ defined( 'ABSPATH' ) || exit;
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-8 left pt-5">
-							<h2 class="h3"><?php echo $sectionOne['section_header']; ?></h2>
+							<h2 class="h3 oswald"><?php echo $sectionOne['section_header']; ?></h2>
 							<hr>
 							<div class="contact d-flex">
 								<div class="d-flex flex-column me-5">
-									<h5>Call Us</h5>
+									<h5 class = "oswald">Call Us</h5>
 									<?php $phone = preg_replace('/[^0-9]/', '', get_field('phone_number', 'option')); ?>
 									<a href="tel:<?php echo $phone ?>"><?php the_field('phone_number', 'option'); ?></a>
 								</div><!-- .left -->
 								<div class="d-flex flex-column">
-									<h5>Visit Us</h5>
+									<h5 class = "oswald">Visit Us</h5>
 									<?php echo get_field('address_line_1', 'option') . ', ' . get_field('address_line_2', 'option'); ?>
 								</div><!-- .right -->
 							</div><!-- .contact -->
 							<hr>
-							<h5><?php echo $sectionOne['form_header']; ?></h5>
+							<h5 class = "oswald"><?php echo $sectionOne['form_header']; ?></h5>
 							<?php echo do_shortcode ('[ninja_form id=1]'); ?>
 						</div><!-- .col-lg-8 -->
 						<div class="col-lg-4 right">

@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 							<?php $img = $sectionOne['image']; ?>
 							<div class="outer-wrapper" style = "background-image: url('<?php echo $img['url']; ?>'); ">
 								<div class="content-wrapper offset-left">
-									<div class="wysiwyg">
+									<div class="wysiwyg oswald">
 										<?php echo $sectionOne['overlay_text']; ?>
 									</div><!-- .wysiwyg -->
 								</div><!-- .content-wrapper -->	

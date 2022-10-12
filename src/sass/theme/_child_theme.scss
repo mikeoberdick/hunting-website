@@ -8,7 +8,7 @@ html {
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: $green;
-  font-family: $open-sans;
+  font-family: $source-serif-pro;
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
@@ -16,6 +16,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 body {
   background-color: #E8E5DF;
 	color: #000;
+  font-family: $source-serif-pro;
 }
 
 .fa-times-thin:before {
@@ -25,6 +26,7 @@ body {
 .wysiwyg {
   p {
     margin-bottom: 1.5rem;
+    line-height: 2;
     &:last-of-type {
       margin-bottom: 0;
     }
@@ -51,6 +53,15 @@ body {
 .maroon {
   color: #36091F;
 }
+.sofia {
+  font-family: $sofia;
+}
+.oswald {
+  font-family: $oswald;
+}
+.source-serif-pro {
+  font-family: $source-serif-pro;
+}
 
 /*------------------------------------------------*/
 /*--------------------[LINKS/BUTTONS]---------------------*/
@@ -65,11 +76,11 @@ a {
 }
 
 .btn {
-  font-family: $open-sans;
+  font-family: $oswald;
   text-transform: uppercase !important;
   padding: .5rem 1.5rem !important;
   white-space: normal;
-  color: $green !important;
+  color: $dark-green !important;
   border-radius: 0 !important;
   border-width: 0 0 10px 0 !important;
   border-color: $yellow !important;
@@ -117,22 +128,34 @@ a {
           height: 57px;
           border-bottom: solid 10px $yellow;
         }
-        a {
-          padding: 10px;
-          font-family: $open-sans;
-          color: $green;
-          text-transform: uppercase;
-          &:hover {
-            background-color: $maroon;
-            color: #fff;
+        li {
+          &.current_page_item {
+            > a {
+              background-color: $maroon;
+              color: #fff;
+            }
+          }
+          a {
+            padding: 10px;
+            font-family: $oswald;
+            text-transform: uppercase;
+            color: $dark-green;
+            &:hover {
+              background-color: $maroon;
+              color: #fff;
+            }
+          }
+          &:first-of-type {
+            a {
+              padding-left: 25px;
+            }
           }
         }
         .dropdown-menu {
           border-radius: 0 !important;
-          border: solid 1px $black;
+          border: solid 1px $maroon;
           li {
-            width: 85%;
-            margin: 0 auto;
+            padding: 5px 25px;
             text-align: center;
             &:not(:last-of-type) {
               border-bottom: solid 1px #dedede;
@@ -140,8 +163,11 @@ a {
             a {
               padding-left: 0;
               padding-right: 0;
+              background-color: transparent;
+              color: $dark-green;
               &:hover {
                 background-color: transparent;
+                color: $green;
               }
             }
           }
@@ -225,7 +251,7 @@ form ::placeholder, form select {
   height: auto !important;
 }
 .nf-form-content input[type=button] {
-  border: 0 0 10px 0 !important;
+  border-bottom: solid 10px $yellow !important;
 }
 /*------------------------------------------------*/
 /*--------------------[REUSABLE STYLES]----------------------*/
@@ -263,7 +289,9 @@ hr {
     }
     span {
       background: #fff; 
-        padding-right: 15px;
+      padding-right: 15px;
+      color: $maroon;
+      font-family: $sofia;
     }
 }
 .gallery-wrapper {
@@ -329,6 +357,7 @@ hr {
           display: flex;
           align-items: center;
           padding-right: 50px;
+          font-size: 1.5rem;
         }  
       }
     }
@@ -337,6 +366,11 @@ hr {
     background-color: #fff;
     padding-top: 50px;
     padding-bottom: 50px;
+    .wysiwyg {
+      .h5, ul li {
+        font-family: $oswald;
+      }
+    }
   }
 }
 
@@ -355,7 +389,108 @@ hr {
     background-color: #E8E5DF;
     padding-bottom: 100px;
     .page-bucket {
-      width: 50%;
+      flex: 1 1 50%;
+      background-position: center !important;
+    }
+  }
+}
+
+/*------------------------------------------------*/
+/*--------------------[SINGLE GUIDED HUNT]----------------------*/
+/*------------------------------------------------*/
+.single-guided-hunt {
+  background-color: #fff;
+  #sectionOne {
+    position: relative;
+    .left {
+      .inner-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        .general-overview {
+          background-color: $green;
+        }
+        .image-holder {
+          height: 350px;
+          background-position: center !important;
+        }
+      }
+    }
+    .right {
+      .target-species {
+        position: relative;
+        background-color: #E8E5DF;
+        &:before {
+          content: '';
+          position: absolute;
+          left: -30px;
+          top: 0;
+          height: 100%;
+          background-color: #E8E5DF;
+          width: 30px;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          right: -200px;
+          top: 0;
+          height: 100%;
+          background-color: #E8E5DF;
+          width: 200px;
+        }
+      }
+      .rates {
+        position: relative;
+        background-color: $maroon;
+        &:before {
+          content: '';
+          position: absolute;
+          left: -30px;
+          top: 0;
+          height: 100%;
+          background-color: $maroon;
+          width: 30px;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          right: -200px;
+          top: 0;
+          height: 100%;
+          background-color: $maroon;
+          width: 200px;
+        }
+        .wysiwyg {
+          li {
+            font-family: $oswald;
+          }
+        }
+      }
+      .main-content{
+        h5 {
+          font-family: $source-serif-pro;
+        }
+        .tablepress {
+          width: 100% !important;
+          thead th {
+            text-align: center;
+            background-color: #E8E5DF !important;
+            font-family: $source-serif-pro;
+          }
+          td {
+            text-align: center !important;
+          }
+        }
+      }
+    }
+  }
+  #sectionTwo {
+    display: flex;
+    flex-wrap: wrap;
+    .page-bucket {
+      flex: 1 1 50%;
+      background-position: center !important;
     }
   }
 }
@@ -401,6 +536,13 @@ hr {
   }
   #sectionTwo {
     box-shadow: rgba(15,70,30,.95) 0 0 0 100vh inset;
+    .left {
+      .wysiwyg {
+        p {
+          font-size: 1.5rem;
+        }
+      }
+    }
     .right {
       .inner-wrapper {
         border-left: solid 2px #E8E5DF;
@@ -411,6 +553,11 @@ hr {
   #sectionThree {
     margin-top: -50px;
     margin-bottom: -50px;
+    .left, .right {
+      p {
+        font-size: 1.5rem;
+      }
+    }
     .center {
       .inner-wrapper {
         background-color: $maroon;
@@ -449,6 +596,7 @@ hr {
       padding-top: 25px;
       padding-bottom: 25px;
       border-bottom: solid 3px #E8E5DF;
+      cursor: pointer;
       .question {
         display: flex;
         align-items: center;
@@ -460,9 +608,8 @@ hr {
           span {
             position: absolute;
             transition: 300ms;
-            background: $maroon;
+            background: $green;
             border-radius: 2px;
-            cursor: pointer;
             &:first-child {
               top: 25%;
               bottom: 25%;
@@ -496,6 +643,9 @@ hr {
             }  
           }
         }
+      }
+      &:last-of-type {
+        border-bottom: 0;
       }
     }
     }
@@ -537,6 +687,7 @@ hr {
       a {
         text-decoration: none;
         color: #fff;
+        font-family: $oswald;
       }
       &:first-of-type {
         a {

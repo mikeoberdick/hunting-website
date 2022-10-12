@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 				<div class="container">
 					<div class="row align-items-center">
 						<div class="col-lg-8">
-							<h3 class="green"><?php echo $sectionOne['header']; ?></h3>
+							<h2 class="green oswald"><?php echo $sectionOne['header']; ?></h2>
 							<div class="wysiwyg">
 								<?php echo $sectionOne['content']; ?>
 							</div><!-- .wysiwyg -->
@@ -43,7 +43,7 @@ defined( 'ABSPATH' ) || exit;
 													  <span></span>
 													  <span></span>
 													</div><!-- .plus-to-minus -->
-				    								<h3 class="question-text d-inline mb-0 h5"><?php the_sub_field('question'); ?></h3>
+				    								<h3 class="question-text d-inline mb-0 h5 oswald maroon"><?php the_sub_field('question'); ?></h3>
 				  								</div><!-- .question -->
 				  							
 					        					<div id="<?php echo 'collapse-question-' . $i; ?>"

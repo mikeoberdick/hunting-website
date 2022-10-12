@@ -34,12 +34,12 @@ defined( 'ABSPATH' ) || exit; ?>
 					'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 				) ); ?>
 			<?php $phone = preg_replace('/[^0-9]/', '', get_field('phone_number', 'option')); ?>
-			<a class = "text-decoration-none" href="tel:<?php echo $phone ?>"><h3 class = "yellow mb-0"><?php the_field('phone_number', 'option'); ?></h3></a>
-			<p class = "small"><?php echo get_field('address_line_1', 'option') . ', ' . get_field('address_line_2', 'option'); ?></p>
+			<a class = "text-decoration-none" href="tel:<?php echo $phone ?>"><h3 class = "yellow mb-0 oswald"><?php the_field('phone_number', 'option'); ?></h3></a>
+			<p class = "small source-serif-pro"><?php echo get_field('address_line_1', 'option') . ', ' . get_field('address_line_2', 'option'); ?></p>
 			</div><!-- .col-lg-9 -->
 			<div class="col-md-12">
 				
-				<footer id="colophon" class="site-footer text-center">
+				<footer id="colophon" class="site-footer text-center source-serif-pro">
 					<div class="container">
 						<div class="col-sm-12">
 							<hr>
