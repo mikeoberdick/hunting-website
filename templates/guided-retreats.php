@@ -1,15 +1,9 @@
-<?php
-/**
- * The template for displaying all single guided hunts.
- *
- * @package understrap
- */
+<?php /* Template Name: Guided Retreats */ 
 
-// Exit if accessed directly.
+//Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header();
-?>
+ get_header(); ?>
 
 <div id="content" class = "page-wrapper" tabindex="-1">
 	<main id="main" class="site-main">
@@ -82,8 +76,6 @@ get_header();
     		<?php endwhile; ?>
 			
 			</section><!-- #sectionTwo -->
-
-		</div><!-- #singleGuidedHunt -->
 	</main><!-- #main -->
 </div><!-- #content -->
 

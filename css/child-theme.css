@@ -16008,32 +16008,32 @@ hr {
 }
 
 /*------------------------------------------------*/
-/*--------------------[SINGLE GUIDED HUNT]----------------------*/
+/*--------------------[SINGLE GUIDED HUNT/GUIDED RETREATS]----------------------*/
 /*------------------------------------------------*/
-.single-guided-hunt {
+.single-guided-hunt, .page-template-guided-retreats {
   background-color: #fff;
 }
-.single-guided-hunt #sectionOne {
+.single-guided-hunt #sectionOne, .page-template-guided-retreats #sectionOne {
   position: relative;
 }
-.single-guided-hunt #sectionOne .left .inner-wrapper {
+.single-guided-hunt #sectionOne .left .inner-wrapper, .page-template-guided-retreats #sectionOne .left .inner-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
 }
-.single-guided-hunt #sectionOne .left .inner-wrapper .general-overview {
+.single-guided-hunt #sectionOne .left .inner-wrapper .general-overview, .page-template-guided-retreats #sectionOne .left .inner-wrapper .general-overview {
   background-color: #0F461E;
 }
-.single-guided-hunt #sectionOne .left .inner-wrapper .image-holder {
+.single-guided-hunt #sectionOne .left .inner-wrapper .image-holder, .page-template-guided-retreats #sectionOne .left .inner-wrapper .image-holder {
   height: 350px;
   background-position: center !important;
 }
-.single-guided-hunt #sectionOne .right .target-species {
+.single-guided-hunt #sectionOne .right .target-species, .page-template-guided-retreats #sectionOne .right .target-species {
   position: relative;
   background-color: #E8E5DF;
 }
-.single-guided-hunt #sectionOne .right .target-species:before {
+.single-guided-hunt #sectionOne .right .target-species:before, .page-template-guided-retreats #sectionOne .right .target-species:before {
   content: "";
   position: absolute;
   left: -30px;
@@ -16042,7 +16042,7 @@ hr {
   background-color: #E8E5DF;
   width: 30px;
 }
-.single-guided-hunt #sectionOne .right .target-species:after {
+.single-guided-hunt #sectionOne .right .target-species:after, .page-template-guided-retreats #sectionOne .right .target-species:after {
   content: "";
   position: absolute;
   right: -200px;
@@ -16051,11 +16051,11 @@ hr {
   background-color: #E8E5DF;
   width: 200px;
 }
-.single-guided-hunt #sectionOne .right .rates {
+.single-guided-hunt #sectionOne .right .rates, .page-template-guided-retreats #sectionOne .right .rates {
   position: relative;
   background-color: #36091F;
 }
-.single-guided-hunt #sectionOne .right .rates:before {
+.single-guided-hunt #sectionOne .right .rates:before, .page-template-guided-retreats #sectionOne .right .rates:before {
   content: "";
   position: absolute;
   left: -30px;
@@ -16064,7 +16064,7 @@ hr {
   background-color: #36091F;
   width: 30px;
 }
-.single-guided-hunt #sectionOne .right .rates:after {
+.single-guided-hunt #sectionOne .right .rates:after, .page-template-guided-retreats #sectionOne .right .rates:after {
   content: "";
   position: absolute;
   right: -200px;
@@ -16073,28 +16073,28 @@ hr {
   background-color: #36091F;
   width: 200px;
 }
-.single-guided-hunt #sectionOne .right .rates .wysiwyg li {
+.single-guided-hunt #sectionOne .right .rates .wysiwyg li, .page-template-guided-retreats #sectionOne .right .rates .wysiwyg li {
   font-family: "Oswald", sans-serif;
 }
-.single-guided-hunt #sectionOne .right .main-content h5, .single-guided-hunt #sectionOne .right .main-content .h5 {
+.single-guided-hunt #sectionOne .right .main-content h5, .single-guided-hunt #sectionOne .right .main-content .h5, .page-template-guided-retreats #sectionOne .right .main-content h5, .page-template-guided-retreats #sectionOne .right .main-content .h5 {
   font-family: "Source Serif Pro", serif;
 }
-.single-guided-hunt #sectionOne .right .main-content .tablepress {
+.single-guided-hunt #sectionOne .right .main-content .tablepress, .page-template-guided-retreats #sectionOne .right .main-content .tablepress {
   width: 100% !important;
 }
-.single-guided-hunt #sectionOne .right .main-content .tablepress thead th {
+.single-guided-hunt #sectionOne .right .main-content .tablepress thead th, .page-template-guided-retreats #sectionOne .right .main-content .tablepress thead th {
   text-align: center;
   background-color: #E8E5DF !important;
   font-family: "Source Serif Pro", serif;
 }
-.single-guided-hunt #sectionOne .right .main-content .tablepress td {
+.single-guided-hunt #sectionOne .right .main-content .tablepress td, .page-template-guided-retreats #sectionOne .right .main-content .tablepress td {
   text-align: center !important;
 }
-.single-guided-hunt #sectionTwo {
+.single-guided-hunt #sectionTwo, .page-template-guided-retreats #sectionTwo {
   display: flex;
   flex-wrap: wrap;
 }
-.single-guided-hunt #sectionTwo .page-bucket {
+.single-guided-hunt #sectionTwo .page-bucket, .page-template-guided-retreats #sectionTwo .page-bucket {
   flex: 1 1 50%;
   background-position: center !important;
 }
