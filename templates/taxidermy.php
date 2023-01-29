@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 			<?php get_template_part( 'snippets/hero'); ?>
 
 			<?php $sectionOne = get_field('section_one'); ?>
-			<section id="sectionOne" class = "py-5">
+			<section id="sectionOne" class = "py-5 d-none">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
@@ -33,7 +33,7 @@ defined( 'ABSPATH' ) || exit;
 								<?php echo $sectionTwo['content']; ?>
 							</div><!-- .wysiwyg -->
 						</div><!-- .col-lg-6 -->
-						<div class="col-lg-6 right">
+						<div class="col-lg-6 right my-3 my-lg-0">
 							<?php $img = $sectionTwo['image']; ?>
 							<img src = "<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
 						</div><!-- .col-lg-6 -->

@@ -19,20 +19,20 @@ defined( 'ABSPATH' ) || exit;
 							<hr>
 							<div class="contact d-flex">
 								<div class="d-flex flex-column me-5">
-									<h5 class = "oswald">Call Us</h5>
+									<h5 class = "oswald">Call</h5>
 									<?php $phone = preg_replace('/[^0-9]/', '', get_field('phone_number', 'option')); ?>
 									<a href="tel:<?php echo $phone ?>"><?php the_field('phone_number', 'option'); ?></a>
 								</div><!-- .left -->
 								<div class="d-flex flex-column">
-									<h5 class = "oswald">Visit Us</h5>
-									<?php echo get_field('address_line_1', 'option') . ', ' . get_field('address_line_2', 'option'); ?>
+									<h5 class = "oswald">Email</h5>
+									<a href="mailto:<?php the_field('email_address','option'); ?>"><?php the_field('email_address','option'); ?></a>
 								</div><!-- .right -->
 							</div><!-- .contact -->
 							<hr>
 							<h5 class = "oswald"><?php echo $sectionOne['form_header']; ?></h5>
 							<?php echo do_shortcode ('[ninja_form id=1]'); ?>
 						</div><!-- .col-lg-8 -->
-						<div class="col-lg-4 right">
+						<div class="col-lg-4 right d-none d-xxl-flex">
 							<?php $img = $sectionOne['image']; ?>
 							<img src = "<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
 						</div><!-- .col-lg-4 -->

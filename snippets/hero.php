@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<div class="content-wrapper offset-left offset-right w-50">
+				<div class="content-wrapper offset-left offset-right w-lg-50">
 					<h3 class = "mb-2 yellow sofia"><?php echo $hero['subtitle']; ?></h3>
 					<h1 class = "title text-white oswald"><?php echo $hero['title']; ?> </h1>
 					<?php if( $hero['button'] == 'yes' ): ?>

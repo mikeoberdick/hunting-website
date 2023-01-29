@@ -67,5 +67,22 @@ if ($(window).width() < 992) {
 	$('#lifeStagesLandingPage #sectionOne .content-wrapper').wrap('<div class = "container"><div class = "row"></div></div>');
 }
 
+
+  //ON LOAD FUNCTION ALLOWS ALL IMAGES TO BE LOADED BEFORE EXECUTION
+  $(window).on("load", function() {
+
+
+    if (window.screen.width >= 992) {
+      // get height of left side and set the righ to match
+      var leftHeight = ($("#singleGuidedHunt .general-overview").outerHeight()) + ($("#singleGuidedHunt .sidebar-gallery").outerHeight());
+      var rightHeight = $("#singleGuidedHunt #sectionOne .right").outerHeight();
+      if (leftHeight > rightHeight) {
+        $("#singleGuidedHunt #sectionOne .right").css("height", leftHeight + "px");
+      }
+    }
+
+
+  });
+
 //end of file
 });

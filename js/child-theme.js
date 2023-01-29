@@ -1,6 +1,6 @@
 /*!
   * Understrap v1.1.0 (https://understrap.com)
-  * Copyright 2013-2022 The Understrap Authors (https://github.com/understrap/understrap/graphs/contributors)
+  * Copyright 2013-2023 The Understrap Authors (https://github.com/understrap/understrap/graphs/contributors)
   * Licensed under GPL (http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
   */
 (function (global, factory) {
@@ -9359,8 +9359,20 @@
 	    $('#lifeStagesLandingPage #hero .content-wrapper').wrap('<div class = "container"><div class = "row"></div></div>');
 	    $('#lifeStagesLandingPage #hero .video-holder').wrap('<div class = "container"><div class = "row"></div></div>');
 	    $('#lifeStagesLandingPage #sectionOne .content-wrapper').wrap('<div class = "container"><div class = "row"></div></div>');
-	  } //end of file
+	  } //ON LOAD FUNCTION ALLOWS ALL IMAGES TO BE LOADED BEFORE EXECUTION
 
+
+	  $(window).on("load", function () {
+	    if (window.screen.width >= 992) {
+	      // get height of left side and set the righ to match
+	      var leftHeight = $("#singleGuidedHunt .general-overview").outerHeight() + $("#singleGuidedHunt .sidebar-gallery").outerHeight();
+	      var rightHeight = $("#singleGuidedHunt #sectionOne .right").outerHeight();
+
+	      if (leftHeight > rightHeight) {
+	        $("#singleGuidedHunt #sectionOne .right").css("height", leftHeight + "px");
+	      }
+	    }
+	  }); //end of file
 	});
 
 	exports.Alert = alert;

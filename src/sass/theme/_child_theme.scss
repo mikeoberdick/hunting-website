@@ -17,6 +17,7 @@ body {
   background-color: #E8E5DF;
 	color: #000;
   font-family: $source-serif-pro;
+  overflow-x: hidden;
 }
 
 .fa-times-thin:before {
@@ -71,7 +72,8 @@ a {
   color: $black;
   text-decoration: none;
   &:hover {
-    text-decoration: none;
+    color: $black;
+    text-decoration: underline;
   }
 }
 
@@ -100,6 +102,7 @@ a {
   right: 0;
   left: 0;
   z-index: 1030;
+  overflow-x: clip;
   #main-nav {
     @include media-breakpoint-down(lg) {
       padding-top: 35px;
@@ -111,7 +114,7 @@ a {
       }
       .navbar-toggler {
         i {
-          color: $black;
+          color: $maroon;
         }
       }
       #main-menu {
@@ -125,7 +128,7 @@ a {
           background: #fff;
           left: 100%;
           top: 0;
-          height: 57px;
+          height: 56px;
           border-bottom: solid 10px $yellow;
         }
         li {
@@ -143,6 +146,7 @@ a {
             &:hover {
               background-color: $maroon;
               color: #fff;
+              text-decoration: none;
             }
           }
           &:first-of-type {
@@ -197,7 +201,7 @@ a {
       margin-top: 24.5px;
       padding: .25rem .75rem;
      i {
-      color: $black;
+      color: $maroon;
       font-weight: bold;
      } 
     }
@@ -262,11 +266,19 @@ form ::placeholder, form select {
   background-size: cover !important;
   background-position: center center !important;
   position: relative;
+  @include media-breakpoint-down(lg) {
+    min-height: 500px;
+  }
   .content-wrapper {
     position: absolute;
     top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    @include media-breakpoint-up(lg) {
+      left: 0;
+      transform: translateY(-50%);
+    }
   }
 }
 hr {
@@ -296,8 +308,20 @@ hr {
 }
 .gallery-wrapper {
   display: flex;
+  @include media-breakpoint-down(lg) {
+    flex-wrap: wrap;
+  }
+  @include media-breakpoint-down(sm) {
+    flex-direction: column;
+  }
   .gallery-image {
-    width: 25%;
+    width: 100%;
+    @include media-breakpoint-up(sm) {
+      width: 50%;
+    }
+    @include media-breakpoint-up(lg) {
+      width: 25%;
+    }
   }
 }
 .page-bucket {
@@ -305,6 +329,9 @@ hr {
   height: 350px;
   box-shadow: rgba(43,21,21,.45) 0 0 0 350px inset;
   background-size: cover !important;
+  @include media-breakpoint-down(lg) {
+    min-height: 350px;
+  }
 }
 /*------------------------------------------------*/
 /*--------------------[HOME]----------------------*/
@@ -312,8 +339,13 @@ hr {
 #homepage {
   #sectionOne {
     display: flex;
+    @include media-breakpoint-down(lg) {
+      flex-direction: column;
+    }
     .page-bucket {
-      width: 33.33%;
+      @include media-breakpoint-up(lg) {
+        width: 33.33%;
+      }
     }
   }
   #sectionTwo {
@@ -321,18 +353,29 @@ hr {
   }
   #sectionThree {
     background-color: $maroon;
-    padding-top: 115px;
-    padding-bottom: 115px;
+    padding: 50px 0;
     position: relative;
+    @include media-breakpoint-down(lg) {
+      padding: 115px 0;
+    }
     .left {
+      @include media-breakpoint-down(lg) {
+        padding: 0;
+        margin-bottom: 25px;
+      }
       .image-holder {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
         background-position: center center !important;
         background-size: cover;
         box-shadow: rgba(43,21,21,.45) 0 0 0 100vh inset;
+        @include media-breakpoint-down(lg) {
+          height: 500px;
+        }
+        @include media-breakpoint-up(lg) {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+        }
       }
     }
   }
@@ -358,6 +401,9 @@ hr {
           align-items: center;
           padding-right: 50px;
           font-size: 1.5rem;
+          @include media-breakpoint-down(lg) {
+            padding: 0 15px;
+          }
         }  
       }
     }
@@ -384,13 +430,23 @@ hr {
   }
   #sectionTwo {
     display: flex;
-    flex-wrap: wrap;
-    padding-top: 100px;
+    padding: 100px 0;
     background-color: #E8E5DF;
-    padding-bottom: 100px;
+    @include media-breakpoint-down(lg) {
+    flex-wrap: wrap;
+    }
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
     .page-bucket {
-      flex: 1 1 50%;
       background-position: center !important;
+      width: 100%;
+      @include media-breakpoint-up(sm) {
+        width: 50%;
+      }
+      @include media-breakpoint-up(lg) {
+        flex: 1 1 50%;
+      }
     }
   }
 }
@@ -403,13 +459,23 @@ hr {
   #sectionOne {
     position: relative;
     .left {
+      @include media-breakpoint-down(lg) {
+        padding: 0;
+      }
       .inner-wrapper {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        .general-overview {
-          background-color: $green;
+        background-color: $green;
+        @include media-breakpoint-down(lg) {
+          padding: 0 15px;
+        }
+        @include media-breakpoint-up(lg) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%; 
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          z-index: 1;
         }
         .image-holder {
           height: 350px;
@@ -422,22 +488,26 @@ hr {
         position: relative;
         background-color: #E8E5DF;
         &:before {
-          content: '';
-          position: absolute;
-          left: -30px;
-          top: 0;
-          height: 100%;
-          background-color: #E8E5DF;
-          width: 30px;
+          @include media-breakpoint-up(lg) {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 0;
+            height: 100%;
+            background-color: #E8E5DF;
+            width: 30px; 
+          }
         }
         &:after {
-          content: '';
-          position: absolute;
-          right: -200px;
-          top: 0;
-          height: 100%;
-          background-color: #E8E5DF;
-          width: 200px;
+          @include media-breakpoint-up(lg) {
+            content: '';
+            position: absolute;
+            right: -200px;
+            top: 0;
+            height: 100%;
+            background-color: #E8E5DF;
+            width: 200px;  
+          }
         }
       }
       .rates {
@@ -453,13 +523,15 @@ hr {
           width: 30px;
         }
         &:after {
-          content: '';
-          position: absolute;
-          right: -200px;
-          top: 0;
-          height: 100%;
-          background-color: $maroon;
-          width: 200px;
+          @include media-breakpoint-up(lg) {
+            content: '';
+            position: absolute;
+            right: -200px;
+            top: 0;
+            height: 100%;
+            background-color: $maroon;
+            width: 200px;  
+          }
         }
         .wysiwyg {
           li {
@@ -487,10 +559,23 @@ hr {
   }
   #sectionTwo {
     display: flex;
+    padding: 100px 0;
+    background-color: #E8E5DF;
+    @include media-breakpoint-down(lg) {
     flex-wrap: wrap;
+    }
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
     .page-bucket {
-      flex: 1 1 50%;
       background-position: center !important;
+      width: 100%;
+      @include media-breakpoint-up(sm) {
+        width: 50%;
+      }
+      @include media-breakpoint-up(lg) {
+        flex: 1 1 50%;
+      }
     }
   }
 }
@@ -506,10 +591,14 @@ hr {
     display: flex;
     flex-wrap: wrap;
     background-color: #E8E5DF;
-    margin-bottom: -60px;
+    @include media-breakpoint-down(lg) {
+      margin-bottom: -60px;
+    }
     .right {
       img {
-        margin-top: -135px;
+        @include media-breakpoint-up(lg) {
+          margin-top: -135px;
+        }
       }
     }
   }
@@ -527,10 +616,12 @@ hr {
     position: relative;
     .right {
       img {
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
+        @include media-breakpoint-up(lg) {
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 100%;  
+        }
       }
     }
   }
@@ -561,8 +652,11 @@ hr {
     .center {
       .inner-wrapper {
         background-color: $maroon;
-        padding: 100px;
+        padding: 15px;
         border: solid 10px #fff;
+        @include media-breakpoint-up(lg) {
+          padding: 100px;
+        }
       }
     }
   }
@@ -582,10 +676,12 @@ hr {
     position: relative;
     .right {
       img {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
+        @include media-breakpoint-down(lg) {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;  
+        }
       }
     }
   }
@@ -600,11 +696,15 @@ hr {
       .question {
         display: flex;
         align-items: center;
+        @include media-breakpoint-down(sm) {
+          flex-direction: column-reverse;
+        }
         .plus-to-minus {
           width: 50px;
           height: 50px;
           font-size: 1.5em;
           position: relative;
+          flex-shrink: 0;
           span {
             position: absolute;
             transition: 300ms;
@@ -626,11 +726,17 @@ hr {
         }
       }
       .card-body {
-        padding-left: 50px;
+        padding-left: 15px;
         padding-bottom: 0;
+        @include media-breakpoint-up(sm) {
+          padding-left: 50px;
+        }
         p {
           margin-bottom: 0;
           color: #000;
+        }
+        a {
+          text-decoration: underline;
         }
       }
       a[aria-expanded="true"] {
@@ -660,10 +766,12 @@ hr {
     position: relative;
     .right {
       img {
-        position: absolute;
-        height: 100%;
-        top: 0;
-        right: 0;
+        @include media-breakpoint-up(xxl) {
+          position: absolute;
+          height: 100%;
+          top: 0;
+          right: 0;  
+        }
       }
     }
   }
@@ -671,7 +779,6 @@ hr {
 /*------------------------------------------------*/
 /*-------------------[FOOTER]---------------------*/
 /*------------------------------------------------*/
-
 #wrapperFooter {
   background: #1D0404;
   color: #fff;
@@ -681,6 +788,10 @@ hr {
   }
   #footerMenu {
     margin-bottom: 25px;
+    @include media-breakpoint-down(lg) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     li {
       display: flex;
       align-items: center;
@@ -696,6 +807,11 @@ hr {
       }
       &:last-of-type {
         span {
+          display: none;
+        }
+      }
+      span {
+        @include media-breakpoint-down(lg) {
           display: none;
         }
       }

@@ -28,7 +28,7 @@ get_header();
 										<?php the_field('general_overview'); ?>
 									</div><!-- .wysiwyg -->
 								</div><!-- .general-overview -->
-								<div class="gallery d-flex flex-column">
+								<div class="sidebar-gallery d-flex flex-column">
 									<?php $images = get_field('sidebar_images'); ?>
 							    	<?php foreach( $images as $image ) : ?>
 							    		<div class="image-holder" style = "background-image: url('<?php echo esc_url($image['url']); ?>'); ">
@@ -50,18 +50,18 @@ get_header();
 									<?php the_field('rates'); ?>
 								</div><!-- .wysiwyg -->
 							</div><!-- .rates -->
-							<div class="main-content py-3">
+							<div class="main-content pt-3">
 								<?php the_field('main_content'); ?>
 							</div><!-- .main-content -->
+							<?php if (get_field('additional_information')) : ?>
+								<div class = "my-3">
+									<h5 class="midline"><span>Additional Information</span></h5>
+									<div class="wysiwyg">
+										<?php the_field('additional_information'); ?>
+									</div><!-- .wysiwyg -->	
+								</div>
+							<?php endif; ?>
 						</div><!-- .col-lg-8 -->
-						<?php if (get_field('additional_information')) : ?>
-						<div class="col-sm-12 mt-3">
-							<h5 class="midline"><span>Additional Information</span></h5>
-							<div class="wysiwyg py-4">
-								<?php the_field('additional_information'); ?>
-							</div><!-- .wysiwyg -->
-						</div><!-- .col-sm-12 -->
-						<?php endif; ?>
 					</div><!-- .row -->
 				</div><!-- .container -->
 			</div><!-- #sectionOne -->

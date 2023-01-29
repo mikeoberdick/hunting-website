@@ -50,11 +50,11 @@ defined( 'ABSPATH' ) || exit; ?>
 <div class="site" id="page">
 
 <!-- ******************* The Navbar Area ******************* -->
-<header id="wrapper-navbar" class = "fixed-top">
+<header id="wrapper-navbar">
 
 	<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-	<nav id="main-nav" class="navbar navbar-expand-md" aria-labelledby="main-nav-label">
+	<nav id="main-nav" class="navbar navbar-expand-lg" aria-labelledby="main-nav-label">
 		<h2 id="main-nav-label" class="screen-reader-text"><?php esc_html_e( 'Main Navigation', 'understrap' ); ?></h2>
 
 		<div class="container">
@@ -94,7 +94,9 @@ defined( 'ABSPATH' ) || exit; ?>
 			<div class="row">
 
 				<div id = "modalTop" class = "col-sm-12">
+					<a id = "logoLink" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
 					<img id = "logo" class = "d-block" src="<?php echo $logo['url']; ?>" alt="<?php echo get_bloginfo( 'name'); ?>">
+				</a>
 					<div type="button" class = "nav-modal-close" data-bs-dismiss="modal" aria-label="Close">
 							<i class="fa fa-times fa-3x" aria-hidden="true"></i>
 					</div>
@@ -113,15 +115,6 @@ defined( 'ABSPATH' ) || exit; ?>
 								'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 							)
 						); ?>
-						<div class="d-flex justify-content-center align-items-center">
-							<ul id = "socialMenu" class = "list-unstyled d-inline-flex justify-content-end">
-								<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="social-link"><a target="_blank" href=""><i class="fa fa-lg fa-facebook" aria-hidden="true"></i></a></li>	
-
-								<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="social-link"><a target="_blank" href=""><i class="fa fa-lg fa-linkedin" aria-hidden="true"></i></a></li>
-
-								<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="social-link"><a target="_blank" href=""><i class="fa fa-lg fa-youtube" aria-hidden="true"></i></a></li>
-							</ul>
-						</div>
 					</div>
 				</div><!-- .col-sm-12 -->
 			</div><!-- .row -->

@@ -15629,6 +15629,7 @@ body {
   background-color: #E8E5DF;
   color: #000;
   font-family: "Source Serif Pro", serif;
+  overflow-x: hidden;
 }
 
 .fa-times-thin:before {
@@ -15684,7 +15685,8 @@ a {
   text-decoration: none;
 }
 a:hover {
-  text-decoration: none;
+  color: #000;
+  text-decoration: underline;
 }
 
 .btn, .wpcf7 input[type=submit], .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-info a.button {
@@ -15712,6 +15714,7 @@ a:hover {
   right: 0;
   left: 0;
   z-index: 1030;
+  overflow-x: clip;
 }
 @media (max-width: 991.98px) {
   #wrapper-navbar #main-nav {
@@ -15725,7 +15728,7 @@ a:hover {
   }
 }
 #wrapper-navbar #main-nav .container .navbar-toggler i {
-  color: #000;
+  color: #36091F;
 }
 #wrapper-navbar #main-nav .container #main-menu {
   background-color: #fff;
@@ -15739,7 +15742,7 @@ a:hover {
   background: #fff;
   left: 100%;
   top: 0;
-  height: 57px;
+  height: 56px;
   border-bottom: solid 10px #FFDA10;
 }
 #wrapper-navbar #main-nav .container #main-menu li.current_page_item > a {
@@ -15755,6 +15758,7 @@ a:hover {
 #wrapper-navbar #main-nav .container #main-menu li a:hover {
   background-color: #36091F;
   color: #fff;
+  text-decoration: none;
 }
 #wrapper-navbar #main-nav .container #main-menu li:first-of-type a {
   padding-left: 25px;
@@ -15801,7 +15805,7 @@ a:hover {
   padding: 0.25rem 0.75rem;
 }
 #modalNav #modalTop .nav-modal-close i {
-  color: #000;
+  color: #36091F;
   font-weight: bold;
 }
 #modalNav #mobileMenu {
@@ -15881,11 +15885,23 @@ form ::placeholder, form select {
   background-position: center center !important;
   position: relative;
 }
+@media (max-width: 991.98px) {
+  .hero {
+    min-height: 500px;
+  }
+}
 .hero .content-wrapper {
   position: absolute;
   top: 50%;
-  left: 0;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+@media (min-width: 992px) {
+  .hero .content-wrapper {
+    left: 0;
+    transform: translateY(-50%);
+  }
 }
 
 hr {
@@ -15919,8 +15935,28 @@ hr {
 .gallery-wrapper {
   display: flex;
 }
+@media (max-width: 991.98px) {
+  .gallery-wrapper {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 575.98px) {
+  .gallery-wrapper {
+    flex-direction: column;
+  }
+}
 .gallery-wrapper .gallery-image {
-  width: 25%;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .gallery-wrapper .gallery-image {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .gallery-wrapper .gallery-image {
+    width: 25%;
+  }
 }
 
 .page-bucket {
@@ -15929,6 +15965,11 @@ hr {
   box-shadow: rgba(43, 21, 21, 0.45) 0 0 0 350px inset;
   background-size: cover !important;
 }
+@media (max-width: 991.98px) {
+  .page-bucket {
+    min-height: 350px;
+  }
+}
 
 /*------------------------------------------------*/
 /*--------------------[HOME]----------------------*/
@@ -15936,26 +15977,52 @@ hr {
 #homepage #sectionOne {
   display: flex;
 }
-#homepage #sectionOne .page-bucket {
-  width: 33.33%;
+@media (max-width: 991.98px) {
+  #homepage #sectionOne {
+    flex-direction: column;
+  }
+}
+@media (min-width: 992px) {
+  #homepage #sectionOne .page-bucket {
+    width: 33.33%;
+  }
 }
 #homepage #sectionTwo {
   background-color: #fff;
 }
 #homepage #sectionThree {
   background-color: #36091F;
-  padding-top: 115px;
-  padding-bottom: 115px;
+  padding: 50px 0;
   position: relative;
 }
+@media (max-width: 991.98px) {
+  #homepage #sectionThree {
+    padding: 115px 0;
+  }
+}
+@media (max-width: 991.98px) {
+  #homepage #sectionThree .left {
+    padding: 0;
+    margin-bottom: 25px;
+  }
+}
 #homepage #sectionThree .left .image-holder {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
   background-position: center center !important;
   background-size: cover;
   box-shadow: rgba(43, 21, 21, 0.45) 0 0 0 100vh inset;
+}
+@media (max-width: 991.98px) {
+  #homepage #sectionThree .left .image-holder {
+    height: 500px;
+  }
+}
+@media (min-width: 992px) {
+  #homepage #sectionThree .left .image-holder {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 /*------------------------------------------------*/
@@ -15979,6 +16046,11 @@ hr {
   padding-right: 50px;
   font-size: 1.5rem;
 }
+@media (max-width: 991.98px) {
+  #trainingProgram #sectionOne .left .outer-wrapper .content-wrapper {
+    padding: 0 15px;
+  }
+}
 #trainingProgram #sectionTwo {
   background-color: #fff;
   padding-top: 50px;
@@ -15997,14 +16069,32 @@ hr {
 }
 #guidedHunts #sectionTwo {
   display: flex;
-  flex-wrap: wrap;
-  padding-top: 100px;
+  padding: 100px 0;
   background-color: #E8E5DF;
-  padding-bottom: 100px;
+}
+@media (max-width: 991.98px) {
+  #guidedHunts #sectionTwo {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 575.98px) {
+  #guidedHunts #sectionTwo {
+    flex-direction: column;
+  }
 }
 #guidedHunts #sectionTwo .page-bucket {
-  flex: 1 1 50%;
   background-position: center !important;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  #guidedHunts #sectionTwo .page-bucket {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  #guidedHunts #sectionTwo .page-bucket {
+    flex: 1 1 50%;
+  }
 }
 
 /*------------------------------------------------*/
@@ -16016,14 +16106,30 @@ hr {
 .single-guided-hunt #sectionOne, .page-template-guided-retreats #sectionOne {
   position: relative;
 }
-.single-guided-hunt #sectionOne .left .inner-wrapper, .page-template-guided-retreats #sectionOne .left .inner-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+@media (max-width: 991.98px) {
+  .single-guided-hunt #sectionOne .left, .page-template-guided-retreats #sectionOne .left {
+    padding: 0;
+  }
 }
-.single-guided-hunt #sectionOne .left .inner-wrapper .general-overview, .page-template-guided-retreats #sectionOne .left .inner-wrapper .general-overview {
+.single-guided-hunt #sectionOne .left .inner-wrapper, .page-template-guided-retreats #sectionOne .left .inner-wrapper {
   background-color: #0F461E;
+}
+@media (max-width: 991.98px) {
+  .single-guided-hunt #sectionOne .left .inner-wrapper, .page-template-guided-retreats #sectionOne .left .inner-wrapper {
+    padding: 0 15px;
+  }
+}
+@media (min-width: 992px) {
+  .single-guided-hunt #sectionOne .left .inner-wrapper, .page-template-guided-retreats #sectionOne .left .inner-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+  }
 }
 .single-guided-hunt #sectionOne .left .inner-wrapper .image-holder, .page-template-guided-retreats #sectionOne .left .inner-wrapper .image-holder {
   height: 350px;
@@ -16033,23 +16139,27 @@ hr {
   position: relative;
   background-color: #E8E5DF;
 }
-.single-guided-hunt #sectionOne .right .target-species:before, .page-template-guided-retreats #sectionOne .right .target-species:before {
-  content: "";
-  position: absolute;
-  left: -30px;
-  top: 0;
-  height: 100%;
-  background-color: #E8E5DF;
-  width: 30px;
+@media (min-width: 992px) {
+  .single-guided-hunt #sectionOne .right .target-species:before, .page-template-guided-retreats #sectionOne .right .target-species:before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 0;
+    height: 100%;
+    background-color: #E8E5DF;
+    width: 30px;
+  }
 }
-.single-guided-hunt #sectionOne .right .target-species:after, .page-template-guided-retreats #sectionOne .right .target-species:after {
-  content: "";
-  position: absolute;
-  right: -200px;
-  top: 0;
-  height: 100%;
-  background-color: #E8E5DF;
-  width: 200px;
+@media (min-width: 992px) {
+  .single-guided-hunt #sectionOne .right .target-species:after, .page-template-guided-retreats #sectionOne .right .target-species:after {
+    content: "";
+    position: absolute;
+    right: -200px;
+    top: 0;
+    height: 100%;
+    background-color: #E8E5DF;
+    width: 200px;
+  }
 }
 .single-guided-hunt #sectionOne .right .rates, .page-template-guided-retreats #sectionOne .right .rates {
   position: relative;
@@ -16064,14 +16174,16 @@ hr {
   background-color: #36091F;
   width: 30px;
 }
-.single-guided-hunt #sectionOne .right .rates:after, .page-template-guided-retreats #sectionOne .right .rates:after {
-  content: "";
-  position: absolute;
-  right: -200px;
-  top: 0;
-  height: 100%;
-  background-color: #36091F;
-  width: 200px;
+@media (min-width: 992px) {
+  .single-guided-hunt #sectionOne .right .rates:after, .page-template-guided-retreats #sectionOne .right .rates:after {
+    content: "";
+    position: absolute;
+    right: -200px;
+    top: 0;
+    height: 100%;
+    background-color: #36091F;
+    width: 200px;
+  }
 }
 .single-guided-hunt #sectionOne .right .rates .wysiwyg li, .page-template-guided-retreats #sectionOne .right .rates .wysiwyg li {
   font-family: "Oswald", sans-serif;
@@ -16092,11 +16204,32 @@ hr {
 }
 .single-guided-hunt #sectionTwo, .page-template-guided-retreats #sectionTwo {
   display: flex;
-  flex-wrap: wrap;
+  padding: 100px 0;
+  background-color: #E8E5DF;
+}
+@media (max-width: 991.98px) {
+  .single-guided-hunt #sectionTwo, .page-template-guided-retreats #sectionTwo {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 575.98px) {
+  .single-guided-hunt #sectionTwo, .page-template-guided-retreats #sectionTwo {
+    flex-direction: column;
+  }
 }
 .single-guided-hunt #sectionTwo .page-bucket, .page-template-guided-retreats #sectionTwo .page-bucket {
-  flex: 1 1 50%;
   background-position: center !important;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .single-guided-hunt #sectionTwo .page-bucket, .page-template-guided-retreats #sectionTwo .page-bucket {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .single-guided-hunt #sectionTwo .page-bucket, .page-template-guided-retreats #sectionTwo .page-bucket {
+    flex: 1 1 50%;
+  }
 }
 
 /*------------------------------------------------*/
@@ -16109,10 +16242,16 @@ hr {
   display: flex;
   flex-wrap: wrap;
   background-color: #E8E5DF;
-  margin-bottom: -60px;
 }
-#taxidermy #sectionTwo .right img {
-  margin-top: -135px;
+@media (max-width: 991.98px) {
+  #taxidermy #sectionTwo {
+    margin-bottom: -60px;
+  }
+}
+@media (min-width: 992px) {
+  #taxidermy #sectionTwo .right img {
+    margin-top: -135px;
+  }
 }
 #taxidermy #sectionThree {
   background-color: #fff;
@@ -16125,11 +16264,13 @@ hr {
   background-color: #36091F;
   position: relative;
 }
-#about #sectionOne .right img {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
+@media (min-width: 992px) {
+  #about #sectionOne .right img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+  }
 }
 #about #sectionTwo {
   box-shadow: rgba(15, 70, 30, 0.95) 0 0 0 100vh inset;
@@ -16150,8 +16291,13 @@ hr {
 }
 #about #sectionThree .center .inner-wrapper {
   background-color: #36091F;
-  padding: 100px;
+  padding: 15px;
   border: solid 10px #fff;
+}
+@media (min-width: 992px) {
+  #about #sectionThree .center .inner-wrapper {
+    padding: 100px;
+  }
 }
 #about #sectionFour {
   background-color: #fff;
@@ -16166,11 +16312,13 @@ hr {
 #faq #sectionOne {
   position: relative;
 }
-#faq #sectionOne .right img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
+@media (max-width: 991.98px) {
+  #faq #sectionOne .right img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
 }
 #faq #sectionTwo {
   background-color: #fff;
@@ -16185,11 +16333,17 @@ hr {
   display: flex;
   align-items: center;
 }
+@media (max-width: 575.98px) {
+  #faq #sectionTwo #faqAccordion .question-container .question {
+    flex-direction: column-reverse;
+  }
+}
 #faq #sectionTwo #faqAccordion .question-container .question .plus-to-minus {
   width: 50px;
   height: 50px;
   font-size: 1.5em;
   position: relative;
+  flex-shrink: 0;
 }
 #faq #sectionTwo #faqAccordion .question-container .question .plus-to-minus span {
   position: absolute;
@@ -16210,12 +16364,20 @@ hr {
   top: 45%;
 }
 #faq #sectionTwo #faqAccordion .question-container .card-body {
-  padding-left: 50px;
+  padding-left: 15px;
   padding-bottom: 0;
+}
+@media (min-width: 576px) {
+  #faq #sectionTwo #faqAccordion .question-container .card-body {
+    padding-left: 50px;
+  }
 }
 #faq #sectionTwo #faqAccordion .question-container .card-body p {
   margin-bottom: 0;
   color: #000;
+}
+#faq #sectionTwo #faqAccordion .question-container .card-body a {
+  text-decoration: underline;
 }
 #faq #sectionTwo #faqAccordion .question-container a[aria-expanded=true] .plus-to-minus span {
   transform: rotate(90deg);
@@ -16234,11 +16396,13 @@ hr {
 #contact #sectionOne {
   position: relative;
 }
-#contact #sectionOne .right img {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  right: 0;
+@media (min-width: 1400px) {
+  #contact #sectionOne .right img {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
 }
 
 /*------------------------------------------------*/
@@ -16255,6 +16419,12 @@ hr {
 #wrapperFooter #footerMenu {
   margin-bottom: 25px;
 }
+@media (max-width: 991.98px) {
+  #wrapperFooter #footerMenu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 #wrapperFooter #footerMenu li {
   display: flex;
   align-items: center;
@@ -16269,6 +16439,11 @@ hr {
 }
 #wrapperFooter #footerMenu li:last-of-type span {
   display: none;
+}
+@media (max-width: 991.98px) {
+  #wrapperFooter #footerMenu li span {
+    display: none;
+  }
 }
 #wrapperFooter footer hr {
   background-color: #dedede;

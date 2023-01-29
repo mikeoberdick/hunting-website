@@ -15,18 +15,18 @@ defined( 'ABSPATH' ) || exit; ?>
 <div id="wrapperFooter">
 	<div class="container">
 		<div class="row align-items-center">
-			<div class="col-lg-3">
+			<div class="col-lg-3 text-center text-lg-start mb-2">
 				<a id = "logoLink" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
 				<?php $logo = get_field('logo', 'options'); ?>
 				<img id = "footerLogo" class = "img-fluid" src="<?php echo $logo['url']; ?>" alt="<?php echo get_bloginfo( 'name'); ?>"></a>
 			</div><!-- .col-lg-3 -->
-			<div class="col-lg-9">
+			<div class="col-lg-9 text-center text-lg-start">
 			<?php wp_nav_menu(
 				array(
 					'theme_location'  => 'footer',
 					'container_class' => '',
 					'container_id'    => 'footerMenuContainer',
-					'menu_class'      => 'd-inline-flex list-unstyled',
+					'menu_class'      => 'd-flex d-inline-lg-flex list-unstyled',
 					'fallback_cb'     => '',
 					'menu_id'         => 'footerMenu',
 					'depth'           => 1,
@@ -34,8 +34,8 @@ defined( 'ABSPATH' ) || exit; ?>
 					'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 				) ); ?>
 			<?php $phone = preg_replace('/[^0-9]/', '', get_field('phone_number', 'option')); ?>
-			<a class = "text-decoration-none" href="tel:<?php echo $phone ?>"><h3 class = "yellow mb-0 oswald"><?php the_field('phone_number', 'option'); ?></h3></a>
-			<p class = "small source-serif-pro"><?php echo get_field('address_line_1', 'option') . ', ' . get_field('address_line_2', 'option'); ?></p>
+			<a class = "text-decoration-none" href="tel:<?php echo $phone ?>"><h5 class = "yellow mb-1 oswald"><?php the_field('phone_number', 'option'); ?></h5></a>
+			<a class = "text-decoration-none" href="mailto:<?php the_field('email_address','option'); ?>"><h5 class = "yellow mb-0 oswald"><?php the_field('email_address','option'); ?></h5></a>
 			</div><!-- .col-lg-9 -->
 			<div class="col-md-12">
 				

@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 								<?php echo $sectionOne['content']; ?>
 							</div><!-- .wysiwyg -->
 						</div><!-- .col-lg-8 -->
-						<div class="col-lg-4 right">
+						<div class="col-lg-4 right d-none d-lg-flex">
 							<?php $img = $sectionOne['image']; ?>
 							<img src = "<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
 						</div><!-- .col-lg-4 -->
@@ -37,7 +37,7 @@ defined( 'ABSPATH' ) || exit;
 								<?php while ( have_rows('questions_and_answers') ) : the_row(); ?>
 						        	<div class="question-container">
 						        		<div class="card-wrapper" role="tab" id="<?php echo 'question-' . $i; ?>">
-				  							<a data-bs-toggle="collapse" data-bs-target="<?php echo '#collapse-question-' . $i; ?>" aria-expanded="<?php if ( $i == 0 ) {echo 'true';} else {echo 'false';}; ?>" aria-controls="<?php echo 'collapse-question-' . $i; ?>">
+				  							<div data-bs-toggle="collapse" data-bs-target="<?php echo '#collapse-question-' . $i; ?>" aria-expanded="<?php if ( $i == 0 ) {echo 'true';} else {echo 'false';}; ?>" aria-controls="<?php echo 'collapse-question-' . $i; ?>">
 				  								<div class = "question">
 				  									<div class = "plus-to-minus">
 													  <span></span>
@@ -45,14 +45,14 @@ defined( 'ABSPATH' ) || exit;
 													</div><!-- .plus-to-minus -->
 				    								<h3 class="question-text d-inline mb-0 h5 oswald maroon"><?php the_sub_field('question'); ?></h3>
 				  								</div><!-- .question -->
+				  							</div>
+				        					<div id="<?php echo 'collapse-question-' . $i; ?>"
+				        					class = "<?php if ( $i == 0 ) {echo 'collapse show';} else {echo 'collapse';}; ?>" role="tabpanel" aria-labelledby="<?php echo 'question-' . $i; ?>" data-bs-parent="#faqAccordion">
+										      	<div class="card-body">
+													<?php the_sub_field('answer'); ?>
+										      	</div><!-- .card-body -->
+				    						</div><!-- .collapse -->
 				  							
-					        					<div id="<?php echo 'collapse-question-' . $i; ?>"
-					        					class = "<?php if ( $i == 0 ) {echo 'collapse show';} else {echo 'collapse';}; ?>" role="tabpanel" aria-labelledby="<?php echo 'question-' . $i; ?>" data-bs-parent="#faqAccordion">
-											      	<div class="card-body">
-														<?php the_sub_field('answer'); ?>
-											      	</div><!-- .card-body -->
-					    						</div><!-- .collapse -->
-				  							</a>
 										</div><!-- card-wrapper -->
 									</div><!-- .question-container -->
 								<?php $i++ ?>

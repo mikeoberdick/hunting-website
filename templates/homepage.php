@@ -16,8 +16,10 @@ get_header(); ?>
 					<?php while(have_rows('page_buckets')) : the_row(); ?>
 						<?php $bg = get_sub_field('background_image'); ?>
 						<div class="page-bucket d-flex flex-column justify-content-center align-items-center" data-link = "<?php the_sub_field('link'); ?>" style = "background-image: url('<?php echo $bg['url']; ?>'); ">
+							<?php if (get_sub_field('subheader')) : ?>
 							<h5 class = "yellow sofia"><?php the_sub_field('subheader'); ?></h5>
-							<h3 class = "text-white oswald"><?php the_sub_field('header'); ?></h3>
+							<?php endif; ?>
+							<h3 class = "text-white oswald mb-0"><?php the_sub_field('header'); ?></h3>
 						</div><!-- .page-bucket -->
 					<?php endwhile; ?>
 				<?php endwhile; ?>
@@ -60,7 +62,9 @@ get_header(); ?>
 							<div class="image-holder" style = "background-image: url('<?php echo $img['url']; ?>'); "></div><!-- .image-holder -->
 						</div><!-- .col-lg-6 -->
 						<div class="col-lg-6">
+							<?php if ($sectionThree['subheader']) : ?>
 							<h5 class = "yellow sofia"><?php echo $sectionThree['subheader']; ?></h5>
+							<?php endif; ?>
 							<h3 class = "text-white oswald"><?php echo $sectionThree['header']; ?></h3>
 							<div class="wysiwyg text-white">
 								<?php echo $sectionThree['content']; ?>
