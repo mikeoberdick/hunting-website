@@ -39,7 +39,6 @@ defined( 'ABSPATH' ) || exit;
 			while( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
 				<?php $bg = get_field('featured_image'); ?>
             	<div class="page-bucket d-flex flex-column justify-content-center align-items-center" data-link = "<?php the_permalink(); ?>" style = "background-image: url('<?php echo $bg['url']; ?>'); ">
-					<h5 class = "yellow sofia">Book Your Hunt</h5>
 					<h2 class = "text-white oswald"><?php the_title(); ?></h2>
 				</div><!-- .page-bucket -->
     		<?php endwhile; wp_reset_query(); ?>

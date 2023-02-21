@@ -35,10 +35,6 @@ defined( 'ABSPATH' ) || exit; ?>
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Sofia&family=Source+Serif+Pro&display=swap" rel="stylesheet">
 
-	<!-- FACEBOOK AND TWITTER SOCIAL SHARE IMAGES -->
-	<meta property="og:image" content="/wp-content/themes/THEME-NAME/img/social_share_image.png">
-	<meta name="twitter:image" content="/wp-content/themes/THEME-NAME/img/social_share_image.png">
-
 	<!-- FAVICONS -->
 	<!-- DON'T FORGET ME! -->
 
@@ -58,9 +54,8 @@ defined( 'ABSPATH' ) || exit; ?>
 		<h2 id="main-nav-label" class="screen-reader-text"><?php esc_html_e( 'Main Navigation', 'understrap' ); ?></h2>
 
 		<div class="container">
-			<a id = "logoLink" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
-				<?php $logo = get_field('logo', 'options'); ?>
-				<img id = "headerLogo" class = "img-fluid" src="<?php echo $logo['url']; ?>" alt="<?php echo get_bloginfo( 'name'); ?>"></a>
+			<a id = "logoLink" class = "text-decoration-none" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
+				<h3 class="h1 sofia yellow text-decoration-none mb-0">Justin Leonhardt Outdoors</h3></a>
 
 			<button id = "mobileNavLauncher" class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#modalNav" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
 						<i class="fa fa-bars fa-3x" aria-hidden="true"></i>
@@ -95,7 +90,7 @@ defined( 'ABSPATH' ) || exit; ?>
 
 				<div id = "modalTop" class = "col-sm-12">
 					<a id = "logoLink" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
-					<img id = "logo" class = "d-block" src="<?php echo $logo['url']; ?>" alt="<?php echo get_bloginfo( 'name'); ?>">
+					<h3 class="h1 sofia yellow text-decoration-none mb-0">Justin Leonhardt Outdoors</h3>
 				</a>
 					<div type="button" class = "nav-modal-close" data-bs-dismiss="modal" aria-label="Close">
 							<i class="fa fa-times fa-3x" aria-hidden="true"></i>

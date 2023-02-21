@@ -15,12 +15,7 @@ defined( 'ABSPATH' ) || exit; ?>
 <div id="wrapperFooter">
 	<div class="container">
 		<div class="row align-items-center">
-			<div class="col-lg-3 text-center text-lg-start mb-2">
-				<a id = "logoLink" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url">
-				<?php $logo = get_field('logo', 'options'); ?>
-				<img id = "footerLogo" class = "img-fluid" src="<?php echo $logo['url']; ?>" alt="<?php echo get_bloginfo( 'name'); ?>"></a>
-			</div><!-- .col-lg-3 -->
-			<div class="col-lg-9 text-center text-lg-start">
+			<div class="col-sm-12 text-center text-lg-start">
 			<?php wp_nav_menu(
 				array(
 					'theme_location'  => 'footer',
@@ -36,7 +31,7 @@ defined( 'ABSPATH' ) || exit; ?>
 			<?php $phone = preg_replace('/[^0-9]/', '', get_field('phone_number', 'option')); ?>
 			<a class = "text-decoration-none" href="tel:<?php echo $phone ?>"><h5 class = "yellow mb-1 oswald"><?php the_field('phone_number', 'option'); ?></h5></a>
 			<a class = "text-decoration-none" href="mailto:<?php the_field('email_address','option'); ?>"><h5 class = "yellow mb-0 oswald"><?php the_field('email_address','option'); ?></h5></a>
-			</div><!-- .col-lg-9 -->
+			</div><!-- .col-sm-12 -->
 			<div class="col-md-12">
 				
 				<footer id="colophon" class="site-footer text-center source-serif-pro">
